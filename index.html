@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cámara Joven Alvear</title>
+<meta name="description" content="Cámara Joven Alvear — rama joven de la Cámara de Comercio de General Alvear. Formación, networking y oportunidades para la juventud alvearense." />
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        background-color: #ffffff;
+        color: #1f2937;
+        -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; }
+    ul { list-style: none; }
+
+    :root {
+        --primary: #5599db;
+        --primary-dark: #3f5c85;
+        --primary-light: #87c3f0;
+        --secondary: #b85d24;
+        --secondary-light: #e8935a;
+        --gray-900: #111827;
+        --gray-800: #1f2937;
+        --gray-700: #374151;
+        --gray-600: #4b5563;
+        --gray-500: #6b7280;
+        --gray-400: #9ca3af;
+        --gray-300: #d1d5db;
+        --gray-200: #e5e7eb;
+        --gray-100: #f3f4f6;
+        --gray-50: #f9fafb;
+    }
+
+    .container-custom { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .bg-primary { background-color: var(--primary); }
+    .bg-primary-dark { background-color: var(--primary-dark); }
+    .bg-primary-soft { background-color: rgba(85, 153, 219, .1); }
+    .bg-primary-soft-5 { background-color: rgba(85, 153, 219, .05); }
+    .text-primary { color: var(--primary); }
+    .text-primary-dark { color: var(--primary-dark); }
+    .border-primary-soft { border-color: rgba(85, 153, 219, .2); }
+    .bg-secondary { background-color: var(--secondary); }
+    .bg-secondary-soft { background-color: rgba(184, 93, 36, .1); }
+    .text-secondary { color: var(--secondary); }
+
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .gap-2 { gap: .5rem; }
+    .gap-3 { gap: .75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    .flex-wrap { flex-wrap: wrap; }
+    .text-center { text-align: center; }
+    .grid { display: grid; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 900px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+    .site-header { position: fixed; top: 1rem; left: 1rem; right: 1rem; z-index: 100; }
+    .header-glass {
+        background: rgba(255, 255, 255, .82);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(229, 231, 235, .6);
+        box-shadow: 0 10px 30px -8px rgba(17, 24, 39, .1);
+        border-radius: 9999px;
+        max-width: 1280px;
+        margin: 0 auto;
+        height: 4.25rem;
+        padding: 0 .75rem 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: .6rem; }
+    .brand-mark {
+        width: 2.5rem; height: 2.5rem; border-radius: .75rem;
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        display: flex; align-items: center; justify-content: center;
+        color: #fff; font-weight: 800; font-size: 1rem; letter-spacing: -.02em;
+        flex-shrink: 0;
+    }
+    .brand-l { height: 2.35rem; width: auto; flex-shrink: 0; }
+    .footer-l { height: 2.1rem; width: auto; flex-shrink: 0; }
+    .brand-text { line-height: 1.05; }
+    .brand-text strong { display: block; font-size: 1.02rem; font-weight: 800; color: var(--gray-900); letter-spacing: -.01em; }
+    .brand-text span { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .12em; color: var(--secondary); }
+
+    /* Nav sin separadores — simple espaciado entre links */
+    .desktop-nav { display: flex; align-items: center; gap: .4rem; }
+    .desktop-nav .nav-sector {
+        padding: 0 .9rem;
+        display: flex;
+        align-items: center;
+        height: 2rem;
+    }
+    .nav-link {
+        color: var(--gray-700); font-weight: 600; font-size: .8rem;
+        letter-spacing: .04em; transition: color .2s ease; position: relative;
+        white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--primary); }
+    .nav-link.active { color: var(--primary-dark); }
+    .nav-link.active::after {
+        content: ''; position: absolute; left: 0; right: 0; bottom: -1.35rem;
+        height: 3px; border-radius: 2px; background: var(--primary);
+    }
+
+    .header-actions { display: flex; align-items: center; gap: .75rem; }
+
+    .mobile-menu {
+        display: none; background: rgba(255,255,255,.98);
+        backdrop-filter: blur(14px); border: 1px solid var(--gray-200);
+        border-radius: 1.25rem; padding: 1.25rem; position: fixed;
+        top: 5.75rem; left: 1rem; right: 1rem; z-index: 99;
+        box-shadow: 0 25px 60px -15px rgba(0,0,0,.2);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: .7rem .25rem; font-weight: 600; color: var(--gray-700); font-size: .9rem; border-bottom: 1px solid var(--gray-100); }
+    .mobile-menu a.active { color: var(--primary-dark); }
+
+    @media (max-width: 1024px) {
+        .desktop-nav, .desktop-cta { display: none; }
+    }
+    @media (min-width: 1025px) {
+        .mobile-toggle { display: none; }
+    }
+
+    .btn { display: inline-flex; align-items: center; gap: .45rem; border: none; cursor: pointer; font-weight: 600; border-radius: 9999px; transition: all .2s ease; font-size: .875rem; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: #fff; padding: .65rem 1.5rem; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background: var(--secondary); color: #fff; padding: .65rem 1.5rem; }
+    .btn-secondary:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-outline { border: 1.5px solid var(--primary); color: var(--primary-dark); padding: .5rem 1.25rem; background: transparent; }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .btn-ghost { color: var(--primary-dark); font-weight: 600; padding: .5rem 0; }
+    .btn-block { width: 100%; justify-content: center; }
+
+
+    .badge { display: inline-flex; align-items: center; gap: .35rem; padding: .3rem .85rem; border-radius: 9999px; font-size: .75rem; font-weight: 600; background: var(--gray-100); color: var(--gray-700); }
+    .badge-primary { background: rgba(85,153,219,.14); color: var(--primary-dark); }
+    .stat-pill { display: inline-flex; align-items: center; gap: .5rem; background: var(--gray-50); border: 1px solid var(--gray-200); padding: .55rem 1.1rem; border-radius: 9999px; font-size: .85rem; font-weight: 600; color: var(--gray-700); }
+    .stat-number { font-size: 2.25rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -.02em; }
+    .program-badge { background: #e8f5e9; color: #2e7d32; padding: .18rem .75rem; border-radius: 9999px; font-size: .68rem; font-weight: 700; white-space: nowrap; }
+    .tag-pill { display: inline-block; background: rgba(85,153,219,.1); color: var(--primary-dark); padding: .4rem .9rem; border-radius: 9999px; font-size: .8rem; font-weight: 600; }
+
+    .page { display: none; }
+    .page.active { display: block; animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .page-hero { padding: 9.5rem 0 4rem; }
+    .page-hero.compact { padding: 8.5rem 0 3rem; text-align: center; }
+    .hero-gradient { background: linear-gradient(135deg, #ebf5fc 0%, #f0f7ff 55%, #fdf6ef 100%); }
+
+    section.block { padding: 4.5rem 0; }
+    .block-alt { background: var(--gray-50); }
+
+    .hero-photo-wrap { position: relative; width: 100%; max-width: 30rem; margin: 0 auto; }
+    .hero-photo-frame {
+        position: relative; border-radius: 50%; overflow: hidden;
+        aspect-ratio: 1/1; border: 10px solid #fff; box-shadow: 0 30px 60px -15px rgba(17,24,39,.2);
+    }
+    .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .floating-chip {
+        position: absolute; background: #fff; border-radius: 9999px; padding: .55rem 1.1rem;
+        box-shadow: 0 12px 30px -8px rgba(17,24,39,.18); font-size: .8rem; font-weight: 600; color: var(--gray-700);
+        display: flex; align-items: center; gap: .4rem;
+    }
+    .chip-top { top: 4%; left: -6%; }
+    .chip-bottom { bottom: 4%; right: -8%; }
+    @media (max-width: 640px) { .chip-top{left:0;} .chip-bottom{right:0;} }
+
+    .mv-card { padding: 2rem; border-radius: 1.25rem; background: #fff; border: 1px solid var(--gray-100); box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .mv-icon {
+        width: 2.75rem; height: 2.75rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0; margin-bottom: 1rem;
+    }
+    .mv-icon.mv-icon-primary { background: rgba(85,153,219,.14); color: var(--primary-dark); }
+    .mv-icon.mv-icon-secondary { background: rgba(184,93,36,.14); color: var(--secondary); }
+    .mv-list { margin-top: 1.1rem; display: flex; flex-direction: column; gap: .55rem; }
+    .mv-list li { display: flex; align-items: flex-start; gap: .6rem; font-size: .85rem; color: var(--gray-600); }
+    .mv-list li .dot { width: .4rem; height: .4rem; border-radius: 50%; margin-top: .4rem; flex-shrink: 0; }
+    .mv-list.mv-list-primary li .dot { background: var(--primary); }
+    .mv-list.mv-list-secondary li .dot { background: var(--secondary); }
+
+    .value-card { padding: 1.75rem 1.25rem; border-radius: 1.1rem; background: #fff; border: 1px solid var(--gray-100); transition: all .25s ease; text-align: center; }
+    .value-card:hover { border-color: var(--primary-light); box-shadow: 0 15px 35px -12px rgba(0,0,0,.08); transform: translateY(-3px); }
+    .value-card .icon { font-size: 2rem; margin-bottom: .6rem; }
+    .value-pill {
+        display: inline-flex; align-items: center; padding: .7rem 1.75rem; border-radius: 9999px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff;
+        font-weight: 700; font-size: .92rem; letter-spacing: -.01em; box-shadow: 0 10px 25px -10px rgba(85,153,219,.4);
+    }
+
+    .cta-gradient {
+        background: linear-gradient(135deg, var(--primary-dark), var(--secondary)); border-radius: 1.75rem;
+        padding: 3.5rem 1.5rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-icon-circle {
+        width: 3.25rem; height: 3.25rem; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.55);
+        display: flex; align-items: center; justify-content: center; margin: 0 auto 1.1rem; color: #fff;
+    }
+
+
+    .news-card {
+        background: #fff; border: 1px solid var(--gray-200); border-radius: 1.25rem; overflow: hidden;
+        transition: all .25s ease; cursor: pointer; display: flex; flex-direction: column;
+    }
+    .news-card:hover { transform: translateY(-5px); box-shadow: 0 25px 45px -15px rgba(0,0,0,.14); border-color: var(--primary-light); }
+    .news-card .thumb { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--gray-100); }
+    .news-card .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .news-card:hover .thumb img { transform: scale(1.06); }
+    .news-tags { position: absolute; top: .75rem; left: .75rem; display: flex; gap: .4rem; }
+    .news-tag { font-size: .68rem; font-weight: 700; padding: .25rem .6rem; border-radius: 9999px; color: #fff; }
+    .news-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+    .news-meta { display: flex; align-items: center; gap: .6rem; font-size: .78rem; color: var(--gray-500); }
+    .news-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-300); }
+
+    .article-header-img { width: 100%; border-radius: 1.4rem; overflow: hidden; aspect-ratio: 16/8; }
+    .article-header-img img { width: 100%; height: 100%; object-fit: cover; }
+    .article-body p { margin-bottom: 1.1rem; color: var(--gray-700); line-height: 1.8; }
+    .article-body p:last-child { margin-bottom: 0; }
+
+    .search-wrap { position: relative; max-width: 34rem; }
+    .search-input {
+        width: 100%; padding: .85rem 3rem .85rem 1.35rem; border-radius: 9999px;
+        border: 1px solid var(--gray-200); outline: none; box-shadow: 0 1px 3px rgba(0,0,0,.04);
+        font-size: .9rem; transition: box-shadow .2s ease, border-color .2s ease;
+    }
+    .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(85,153,219,.18); }
+    .search-icon { position: absolute; right: 1.15rem; top: 50%; transform: translateY(-50%); color: var(--gray-400); pointer-events: none; }
+
+    .institution-card {
+        background: #fff; border: 1px solid var(--gray-200); border-radius: 1.25rem; padding: 1.6rem;
+        transition: all .25s ease; display: flex; flex-direction: column; gap: 1rem;
+    }
+    .institution-card:hover { transform: translateY(-4px); box-shadow: 0 22px 45px -14px rgba(0,0,0,.1); border-color: var(--primary-light); }
+    .inst-l {
+        width: 3.4rem; height: 3.4rem; border-radius: .9rem; overflow: hidden; flex-shrink: 0;
+        border: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: center;
+        font-weight: 800; color: #fff; font-size: 1.05rem; letter-spacing: -.02em;
+    }
+    .inst-l img { width: 100%; height: 100%; object-fit: contain; padding: .5rem; background: #fff; }
+    .inst-contact-row { display: flex; align-items: flex-start; gap: .55rem; font-size: .83rem; color: var(--gray-600); }
+    .inst-contact-row svg { flex-shrink: 0; margin-top: .15rem; color: var(--primary); }
+
+    .inst-hero {
+        border-radius: 1.75rem; padding: 2.5rem; background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        color: #fff; position: relative; overflow: hidden;
+    }
+    .inst-hero::before {
+        content: ''; position: absolute; inset: 0;
+        background: radial-gradient(circle at 85% 20%, rgba(255,255,255,.14), transparent 55%);
+    }
+    .inst-hero-l {
+        width: 5rem; height: 5rem; border-radius: 1.2rem; background: rgba(255,255,255,.16);
+        border: 1px solid rgba(255,255,255,.35); display: flex; align-items: center; justify-content: center;
+        font-weight: 800; font-size: 1.5rem; overflow: hidden; flex-shrink: 0;
+    }
+    .inst-hero-l img { width: 100%; height: 100%; object-fit: contain; padding: .65rem; background: #fff; border-radius: inherit; }
+    .info-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 1.25rem; padding: 1.75rem; }
+    .info-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--gray-900); margin-bottom: 1.1rem; display: flex; align-items: center; gap: .5rem; }
+    .info-row { display: flex; gap: .8rem; align-items: flex-start; padding: .65rem 0; border-bottom: 1px dashed var(--gray-200); font-size: .88rem; }
+    .info-row:last-child { border-bottom: none; }
+    .info-row .ico { width: 2.1rem; height: 2.1rem; border-radius: .65rem; background: var(--gray-50); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--primary); }
+    .info-row .lbl { color: var(--gray-500); font-size: .74rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+    .info-row .val { color: var(--gray-800); font-weight: 500; }
+
+    .program-list { display: flex; flex-direction: column; gap: .1rem; }
+    .program-list-item {
+        display: flex; align-items: flex-start; gap: .75rem;
+        padding: .8rem .2rem; border-bottom: 1px dashed var(--gray-200);
+        font-size: .92rem; color: var(--gray-800); line-height: 1.45;
+    }
+    .program-list-item:last-child { border-bottom: none; }
+    .program-list-ico {
+        width: 1.75rem; height: 1.75rem; border-radius: .55rem; flex-shrink: 0;
+        background: var(--primary-light); background: rgba(85,153,219,.14); color: var(--primary-dark);
+        display: flex; align-items: center; justify-content: center; margin-top: .05rem;
+    }
+
+    .partners-section { padding-top: 1rem; }
+    .partners-grid {
+        display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+        gap: 2.75rem; margin-top: 2.5rem;
+    }
+    .partner-l-item {
+        display: flex; align-items: center; justify-content: center;
+        height: 3.6rem; width: auto; max-width: 10rem;
+        filter: grayscale(1); opacity: .55; transition: all .25s ease;
+    }
+    .partner-l-item:hover { filter: grayscale(0); opacity: 1; transform: translateY(-2px); }
+    .partner-l-item img { height: 100%; width: auto; max-width: 10rem; object-fit: contain; }
+    .partner-l-fallback {
+        font-size: .78rem; font-weight: 700; color: var(--gray-500); text-align: center; max-width: 8rem;
+    }
+
+    .contact-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 1.5rem; padding: 2rem; }
+    .social-btn {
+        display: flex; align-items: center; gap: .9rem; padding: 1rem 1.25rem; border-radius: 1rem;
+        border: 1px solid var(--gray-200); transition: all .2s ease; background: #fff;
+    }
+    .social-btn:hover { border-color: var(--primary-light); background: var(--gray-50); transform: translateY(-2px); }
+    .social-ico { width: 2.75rem; height: 2.75rem; border-radius: .85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; }
+    .map-frame { width: 100%; height: 20rem; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--gray-200); }
+
+    footer { background: var(--gray-900); color: var(--gray-300); padding: 4.5rem 0 2rem; position: relative; overflow: hidden; }
+    .footer-blob { position: absolute; width: 18rem; height: 18rem; border-radius: 50%; filter: blur(70px); }
+    .footer-icon { width: 2.2rem; height: 2.2rem; background: var(--gray-800); border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--primary); }
+    .footer-heading { color: #fff; font-weight: 700; font-size: 1.02rem; margin-bottom: 1rem; }
+    footer a:hover { color: #fff; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--gray-100); }
+    ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+    /* Misc */
+    .divider-dashed { border-top: 1px dashed var(--gray-200); }
+    .empty-state { text-align: center; padding: 3.5rem 1rem; color: var(--gray-500); }
+    .back-link { display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; color: var(--primary-dark); font-size: .9rem; margin-bottom: 1.5rem; }
+    .back-link:hover { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-glass">
+        <a href="#quienes-somos" class="brand">
+            <img src="publicidad/camara-joven-logo.png" alt="Cámara Joven Alvear Mendoza" class="brand-l" />
+        </a>
+
+        <nav class="desktop-nav">
+            <span class="nav-sector"><a href="#quienes-somos" class="nav-link" data-nav="quienes-somos">QUIÉNES SOMOS</a></span>
+            <span class="nav-sector"><a href="#noticias" class="nav-link" data-nav="noticias">NOTICIAS</a></span>
+            <span class="nav-sector"><a href="#oferta-educativa" class="nav-link" data-nav="oferta-educativa">OFERTA EDUCATIVA</a></span>
+            <span class="nav-sector"><a href="#contacto" class="nav-link" data-nav="contacto">CONTACTO</a></span>
+        </nav>
+
+        <div class="header-actions">
+            <a href="https://wa.me/542625529163" target="_blank" rel="noopener noreferrer" class="desktop-cta">
+                <button class="btn btn-primary">ÚNETE</button>
+            </a>
+            <button class="mobile-toggle" id="menuToggle" aria-label="Abrir menú" style="background:none;border:none;padding:.5rem;color:var(--gray-700);cursor:pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#quienes-somos" data-nav="quienes-somos">QUIÉNES SOMOS</a>
+        <a href="#noticias" data-nav="noticias">NOTICIAS</a>
+        <a href="#oferta-educativa" data-nav="oferta-educativa">OFERTA EDUCATIVA</a>
+        <a href="#contacto" data-nav="contacto" style="border-bottom:none;">CONTACTO</a>
+        <a href="https://wa.me/542625529163" target="_blank" rel="noopener noreferrer" style="border-bottom:none;margin-top:.5rem;">
+            <button class="btn btn-primary btn-block">ÚNETE</button>
+        </a>
+    </div>
+</header>
+
+<main id="app">
+
+<section class="page" id="page-quienes-somos" data-page="quienes-somos">
+
+    <div class="hero-gradient page-hero">
+        <div class="container-custom">
+            <div class="flex items-center" style="gap:3.5rem; flex-wrap:wrap;">
+                <div style="flex:1 1 26rem;">
+                    <span class="badge badge-primary">Conocé nuestra historia · Cámara Joven Alvear</span>
+                    <h1 style="font-size:2.75rem; font-weight:800; color:var(--gray-900); line-height:1.12; margin-top:1.1rem; letter-spacing:-.02em;">
+                        Somos la <span class="text-primary">nueva generación</span> de líderes
+                    </h1>
+                    <p style="margin-top:1.25rem; font-size:1.08rem; color:var(--gray-600); line-height:1.7; max-width:34rem;">
+                        Desde 2015, trabajamos como rama joven de la Cámara de Comercio para impulsar el desarrollo integral de la juventud alvearense a través de formación, networking y oportunidades reales.
+                    </p>
+                    <div class="flex flex-wrap gap-3" style="margin-top:1.75rem;">
+                        <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <strong id="statJovenes">300+</strong> jóvenes capacitados</span>
+                        <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> <strong id="statProyectos">50+</strong> proyectos conectados</span>
+                    </div>
+                </div>
+
+                <div style="flex:1 1 24rem;">
+                    <div class="hero-photo-wrap">
+                        <span class="floating-chip chip-top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> General Alvear</span>
+                        <div class="hero-photo-frame">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Jóvenes de la Cámara Joven Alvear trabajando en equipo" loading="lazy" />
+                        </div>
+                        <span class="floating-chip chip-bottom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Desde 2015</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Misión y Visión -->
+    <section class="block">
+        <div class="container-custom">
+            <div class="grid grid-2 gap-8">
+                <div class="mv-card">
+                    <div class="mv-icon mv-icon-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <h3 style="font-size:1.3rem; font-weight:800; color:var(--gray-900);">Misión</h3>
+                    <p style="margin-top:.85rem; color:var(--gray-600); line-height:1.75;">
+                        Impulsar el desarrollo integral de la juventud alvearense mediante formación, articulación institucional y oportunidades concretas para emprender, liderar y crecer.
+                    </p>
+                    <ul class="mv-list mv-list-primary">
+                        <li><span class="dot"></span><span>Capacitar al menos a 300 jóvenes por año</span></li>
+                        <li><span class="dot"></span><span>Conectar 50 proyectos con mentores y financiamiento</span></li>
+                    </ul>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon mv-icon-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3 style="font-size:1.3rem; font-weight:800; color:var(--gray-900);">Visión</h3>
+                    <p style="margin-top:.85rem; color:var(--gray-600); line-height:1.75;">
+                        Ser el referente local en formación de líderes y emprendedores jóvenes, potenciando el talento y el crecimiento sostenible de General Alvear.
+                    </p>
+                    <ul class="mv-list mv-list-secondary">
+                        <li><span class="dot"></span><span>Ser referente local y regional en liderazgo joven</span></li>
+                        <li><span class="dot"></span><span>Ampliar la red de instituciones aliadas cada año</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="block block-alt">
+        <div class="container-custom">
+            <div class="text-center">
+                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900);">Nuestros Valores</h3>
+                <p style="color:var(--gray-500); margin-top:.5rem;">Los principios que guían nuestro trabajo y definen nuestra identidad como organización.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4" style="margin-top:2.25rem;">
+                <span class="value-pill">Colaboración</span>
+                <span class="value-pill">Integridad</span>
+                <span class="value-pill">Formación continua</span>
+                <span class="value-pill">Impacto local</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="block">
+        <div class="container-custom">
+            <div class="cta-gradient">
+                <div class="cta-icon-circle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </div>
+                <h3 style="font-size:1.75rem; font-weight:800; color:#fff;">¿Te sumás a nuestra misión?</h3>
+                <p style="margin-top:.65rem; color:rgba(255,255,255,.88); max-width:32rem; margin-left:auto; margin-right:auto;">
+                    Unite a la Cámara Joven y sé parte del cambio que General Alvear necesita. Juntos podemos construir un futuro mejor para nuestra juventud.
+                </p>
+                <div style="margin-top:1.75rem;">
+                    <a href="https://wa.me/542625529163" target="_blank" rel="noopener noreferrer">
+                        <button class="btn" style="background:#fff; color:var(--primary-dark); padding:.9rem 2.25rem; font-size:1rem;">
+                            Quiero sumarme
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<section class="page" id="page-noticias" data-page="noticias">
+    <div class="hero-gradient page-hero compact">
+        <div class="container-custom">
+            <h1 style="font-size:2.5rem; font-weight:800; color:var(--gray-900);">Noticias y Eventos</h1>
+            <p style="margin-top:.85rem; color:var(--gray-600); max-width:38rem; margin-left:auto; margin-right:auto; font-size:1.05rem;">
+                Mantente informado sobre las últimas novedades y actividades de la Cámara Joven de General Alvear.
+            </p>
+        </div>
+    </div>
+
+    <section class="block">
+        <div class="container-custom">
+            <div class="flex items-center gap-3" style="margin-bottom:2rem;">
+                <span style="width:2.75rem; height:2.75rem; border-radius:.85rem; background:var(--gray-100); display:flex; align-items:center; justify-content:center; color:var(--primary-dark);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></span>
+                <div>
+                    <h2 style="font-size:1.25rem; font-weight:800; color:var(--gray-900);">Noticias y Eventos</h2>
+                    <p style="font-size:.85rem; color:var(--gray-500);">Novedades y actualizaciones importantes</p>
+                </div>
+            </div>
+
+            <div class="grid grid-3 gap-6" id="newsGrid"></div>
+        </div>
+    </section>
+</section>
+
+<section class="page" id="page-noticia-detalle" data-page="noticia-detalle">
+    <div class="container-custom" style="padding-top:8.5rem; padding-bottom:5rem; max-width:820px;">
+        <a href="#noticias" class="back-link">← Volver a noticias y eventos</a>
+        <div id="noticiaDetalleContent"></div>
+    </div>
+</section>
+
+<section class="page" id="page-oferta-educativa" data-page="oferta-educativa">
+    <div class="hero-gradient page-hero compact">
+        <div class="container-custom">
+            <span class="badge badge-primary"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.84l8.57 3.905a2 2 0 0 0 1.66 0z"/><path d="M22 10.5V16"/><path d="M6 12.5V17c0 1.657 2.686 3 6 3s6-1.343 6-3v-4.5"/></svg> Directorio Educativo</span>
+            <h1 style="font-size:2.5rem; font-weight:800; color:var(--gray-900); margin-top:1rem;">Descubre tu futuro profesional</h1>
+            <p style="margin-top:.85rem; color:var(--gray-600); max-width:40rem; margin-left:auto; margin-right:auto; font-size:1.05rem;">
+                Explora las mejores oportunidades de formación en General Alvear. Conectamos talento joven con instituciones de excelencia para impulsar tu carrera profesional.
+            </p>
+            <div class="flex flex-wrap gap-3 justify-center" style="margin-top:1.5rem;">
+                <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <strong id="statInstituciones">0</strong> Instituciones</span>
+                <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> <strong id="statProgramas">0</strong> Programas</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="block" style="padding-top:2.5rem;">
+        <div class="container-custom">
+            <div class="search-wrap" style="margin:0 auto;">
+                <input type="text" id="ofertaSearch" class="search-input" placeholder="Buscar por nombre de programa, institución o etiquetas..." oninput="filterInstitutions(this.value)" />
+                <svg class="search-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <p class="text-center" style="margin-top:1rem; color:var(--gray-500); font-size:.9rem;" id="ofertaCount"></p>
+
+            <div class="grid grid-3 gap-6" id="institutionsGrid" style="margin-top:2rem;"></div>
+            <div class="empty-state" id="ofertaEmpty" style="display:none;">
+                <p style="color:var(--gray-400);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></p>
+                <p style="margin-top:.5rem; font-weight:600;">No encontramos resultados</p>
+                <p style="font-size:.9rem;">Probá con otro nombre de institución, programa o etiqueta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aliados Estratégicos / ls publicitarios -->
+    <section class="block block-alt partners-section">
+        <div class="container-custom">
+            <div class="text-center">
+                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900);">Nuestros Aliados Estratégicos</h3>
+                <p style="color:var(--gray-500); margin-top:.5rem; max-width:40rem; margin-left:auto; margin-right:auto;">
+                    Trabajamos junto a instituciones educativas y organizaciones comprometidas con el desarrollo de la juventud y el crecimiento económico de General Alvear.
+                </p>
+            </div>
+            <div class="partners-grid" id="partnersGrid"></div>
+        </div>
+    </section>
+</section>
+
+<section class="page" id="page-institucion-detalle" data-page="institucion-detalle">
+    <div class="container-custom" style="padding-top:8.5rem; padding-bottom:5rem;">
+        <a href="#oferta-educativa" class="back-link">← Volver a oferta educativa</a>
+        <div id="institucionDetalleContent"></div>
+    </div>
+</section>
+
+<section class="page" id="page-contacto" data-page="contacto">
+    <div class="hero-gradient page-hero compact">
+        <div class="container-custom">
+            <span class="badge badge-primary"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Hablemos</span>
+            <h1 style="font-size:2.5rem; font-weight:800; color:var(--gray-900); margin-top:1rem;">Contactanos</h1>
+            <p style="margin-top:.85rem; color:var(--gray-600); max-width:36rem; margin-left:auto; margin-right:auto; font-size:1.05rem;">
+                ¿Tenés una idea, una consulta o querés sumarte? Escribinos por el medio que prefieras, te respondemos a la brevedad.
+            </p>
+        </div>
+    </div>
+
+    <section class="block" style="padding-top:2.5rem;">
+        <div class="container-custom">
+            <div class="grid grid-2 gap-8" style="align-items:start;">
+
+                <!-- Redes y contacto directo -->
+                <div class="contact-card">
+                    <h3 style="font-size:1.15rem; font-weight:800; color:var(--gray-900); margin-bottom:1.25rem;">Nuestras redes y canales</h3>
+                    <div class="flex flex-col gap-3">
+                        <a href="https://wa.me/542625529163" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <span class="social-ico" style="background:#25D366;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.2 4.74 1.2h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.8 14.11c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98s.73-2.11 1-2.4c.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.33 1.44.29.15.46.13.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.7-.17 1.38z"/></svg>
+                            </span>
+                            <div>
+                                <p style="font-weight:700; font-size:.92rem; color:var(--gray-900);">WhatsApp</p>
+                                <p style="font-size:.82rem; color:var(--gray-500);">+54 2625 52-9163</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/c.jovenalvear/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <span class="social-ico" style="background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);">
+                                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            </span>
+                            <div>
+                                <p style="font-weight:700; font-size:.92rem; color:var(--gray-900);">Instagram</p>
+                                <p style="font-size:.82rem; color:var(--gray-500);">@c.jovenalvear</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:c.jovenalvear@gmail.com" class="social-btn">
+                            <span class="social-ico bg-primary">
+                                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </span>
+                            <div>
+                                <p style="font-weight:700; font-size:.92rem; color:var(--gray-900);">Email</p>
+                                <p style="font-size:.82rem; color:var(--gray-500);">c.jovenalvear@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://camaradealvear.org.ar/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <span class="social-ico" style="background:var(--secondary);">
+                                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            </span>
+                            <div>
+                                <p style="font-weight:700; font-size:.92rem; color:var(--gray-900);">Cámara de Comercio de Alvear</p>
+                                <p style="font-size:.82rem; color:var(--gray-500);">camaradealvear.org.ar</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="divider-dashed" style="margin:1.5rem 0;"></div>
+
+                    <div class="flex flex-col gap-3" style="font-size:.88rem; color:var(--gray-600);">
+                        <div class="flex items-center gap-3">
+                            <span class="footer-icon" style="background:var(--gray-100);">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
+                            <span>Paso de los Andes 525, General Alvear – Mendoza</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div>
+                    <h3 style="font-size:1.15rem; font-weight:800; color:var(--gray-900); margin-bottom:1.25rem;">Dónde estamos</h3>
+                    <div class="map-frame">
+                        <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.0554689539917!2d-67.69801956443219!3d-34.976746880579306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967817172d6ad5e5%3A0x27ebd840cb1fa8dc!2sPaso%20de%20los%20Andes%20525%2C%20M5620%20Gral.%20Alvear%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1755900954824!5m2!1ses!2sar"
+                        width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Cámara Joven Alvear"></iframe>
+                    </div>
+                    <div class="bg-primary-soft-5" style="margin-top:1.25rem; padding:1.25rem 1.5rem; border-radius:1.25rem; border:1px solid rgba(85,153,219,.2);">
+                        <p style="font-weight:700; color:var(--gray-900); font-size:.9rem;">Horario de atención</p>
+                        <p style="font-size:.85rem; color:var(--gray-600); margin-top:.3rem;">Lunes a viernes de 9 a 13 hs y de 16 a 19 hs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-blob bg-primary" style="top:-4rem; left:-4rem; opacity:.12;"></div>
+    <div class="footer-blob bg-secondary" style="bottom:-4rem; right:-4rem; opacity:.12;"></div>
+
+    <div class="container-custom" style="position:relative; z-index:1;">
+        <div class="grid" style="grid-template-columns:1.3fr 1fr 1fr 1fr; gap:3rem;">
+
+            <div>
+                <a href="#quienes-somos" class="flex items-center gap-3" style="margin-bottom:1rem;">
+                    <img src="publicidad/camara-joven-logo.png" alt="Cámara Joven Alvear Mendoza" class="footer-l" />
+                </a>
+                <p style="font-size:.85rem; color:var(--gray-400); line-height:1.6;">
+                    Parte de la <a href="https://camaradealvear.org.ar/" target="_blank" rel="noopener noreferrer" class="text-primary">Cámara de Comercio de Alvear</a>
+                </p>
+                <div class="flex gap-3" style="margin-top:1.1rem;">
+                    <a href="https://www.instagram.com/c.jovenalvear/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://wa.me/542625529163" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.2 4.74 1.2h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2z"/></svg>
+                    </a>
+                    <a href="mailto:c.jovenalvear@gmail.com" aria-label="Email" class="footer-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <p class="footer-heading">Contacto</p>
+                <ul class="flex flex-col gap-3" style="font-size:.85rem;">
+                    <li class="flex items-start gap-2"><span style="margin-top:.15rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><span>Paso de los Andes 525, General Alvear – Mendoza</span></li>
+                    <li class="flex items-start gap-2"><span style="margin-top:.15rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span>+54 2625 529163</span></li>
+                    <li class="flex items-start gap-2"><span style="margin-top:.15rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><a href="mailto:c.jovenalvear@gmail.com">c.jovenalvear@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="footer-heading">Enlaces rápidos</p>
+                <ul class="flex flex-col gap-2" style="font-size:.85rem;">
+                    <li><a href="#quienes-somos" class="flex items-center gap-2"><span style="width:.35rem;height:.35rem;border-radius:50%;background:var(--secondary);"></span>Quiénes somos</a></li>
+                    <li><a href="#noticias" class="flex items-center gap-2"><span style="width:.35rem;height:.35rem;border-radius:50%;background:var(--secondary);"></span>Noticias y eventos</a></li>
+                    <li><a href="#oferta-educativa" class="flex items-center gap-2"><span style="width:.35rem;height:.35rem;border-radius:50%;background:var(--secondary);"></span>Oferta educativa</a></li>
+                    <li><a href="#contacto" class="flex items-center gap-2"><span style="width:.35rem;height:.35rem;border-radius:50%;background:var(--secondary);"></span>Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="footer-heading">Ubicación</p>
+                <div style="width:100%; height:9rem; background:var(--gray-800); border-radius:1rem; overflow:hidden;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.0554689539917!2d-67.69801956443219!3d-34.976746880579306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967817172d6ad5e5%3A0x27ebd840cb1fa8dc!2sPaso%20de%20los%20Andes%20525%2C%20M5620%20Gral.%20Alvear%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1755900954824!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Cámara Joven Alvear"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div style="border-top:1px solid var(--gray-800); margin-top:3rem; padding-top:1.75rem; text-align:center;">
+            <p style="font-size:.8rem; color:var(--gray-500);">© 2026 Cámara Joven Alvear. Rama joven de la Cámara de Comercio de General Alvear.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+/* DATOS DEL SITIO DATOS DE CAMBIO ACLARACION IMPORTANTE DE MODIFICACIONES*/
+/* Editá estos arrays para actualizar el contenido de la página.*/
+
+/*NOTICIAS*/
+/* Para agregar una noticia nueva, copiá un objeto y cambiá los datos.
+   El campo "content" acepta un array de párrafos (cada string = un <p>). */
+const NEWS = [
+    {
+        id: "fiesta-nacional-ganaderia",
+        date: "2026-05-10",
+        dateLabel: "10/5/2026",
+        author: "Cámara Joven Alvear",
+        tags: [{ label: "Eventos", color: "#16a34a" }, { label: "Peña de la Fiesta", color: "#8b5cf6" }],
+        title: "45° Fiesta Nacional de la Ganadería",
+        excerpt: "La edición 2026 volvió a reafirmar el rol central de la Fiesta Nacional de la Ganadería de Zonas Áridas, celebrada en General Alvear durante la primera quincena de mayo.",
+        image: "https://i.imgur.com/nSpWqK5.png",
+        content: [
+        "La edición 2026 volvió a reafirmar el rol central de la Fiesta Nacional de la Ganadería de Zonas Áridas, celebrada en General Alvear durante la primera quincena de mayo. Más de 60.000 asistentes, 300 expositores, el tradicional almuerzo con costillares al ensartador, peñas folclóricas y destrezas criollas transformaron el predio ferial en un verdadero punto de encuentro para la cultura, la producción y el turismo.",
+        "El impacto económico fue estimado en unos 500 millones de pesos, cifra que demuestra el magnetismo turístico y comercial del evento. Pero además, el sector ganadero aprovechó el espacio para alzar la voz y reclamar obras estratégicas como electrificación rural, acueductos, gasoductos y mejores caminos, bajo la consigna: \"sin obras, no hay desarrollo posible\".",
+        "La Cámara Joven de Alvear, junto a la Cámara de Comercio, Industria, Agricultura y Ganadería, tuvo a su cargo la organización de La Peña, uno de los eventos más convocantes de la fiesta. Miles de vecinos y visitantes disfrutaron de una noche inolvidable con las presentaciones de Los Manseros Santiagueños, Campedrinos, Algarroba y DJ Pipo, consolidando una propuesta que combinó música, tradición y encuentro para toda la comunidad.",
+        "Desde la Cámara Joven destacamos el compromiso y el trabajo en equipo que hicieron posible el éxito de esta celebración, reafirmando nuestro compromiso con el desarrollo cultural, turístico y social de General Alvear.",
+        "Y ya tenemos fecha confirmada para volver a vivir esta fiesta inolvidable: la 45ª edición se realizará ¿? de mayo de 2027."
+        ]
+    },
+    {
+        id: "Oferta-educativa-2026",
+        date: "2026-07-21",
+        dateLabel: "21/07/2026",
+        author: "Cámara Joven Alvear",
+        tags: [{ label: "Oferta Educativa", color: "#5599db" }],
+        title: "29.ª Edición de la Oferta Educativa",
+        excerpt: "La Cámara Joven ya prepara la 29.ª edición de la Oferta Educativa 2026, que reunirá a más de 15 instituciones educativas y a más de 600 estudiantes de General Alvear.",
+        image: "https://i.imgur.com/mww4wau.png",
+        content: [
+        "La Cámara Joven de General Alvear ya trabaja en la organización de una nueva edición de la Oferta Educativa 2026, un evento que año tras año acerca a los estudiantes las distintas alternativas de formación académica y profesional disponibles en el departamento y la región.",
+        "La 29.ª edición se lleva adelante mediante un trabajo conjunto con más de 15 instituciones educativas de General Alvear, junto al acompañamiento de Juventud Alvear, fortaleciendo un espacio de colaboración entre el sector educativo, público y privado para brindar a los jóvenes toda la información necesaria sobre su futuro académico.",
+        "La propuesta tiene como objetivo orientar a los estudiantes que cursan el último año del nivel secundario, permitiéndoles conocer de primera mano las carreras, tecnicaturas, cursos y oportunidades de formación que ofrecen las instituciones participantes.",
+        "Para esta edición, se espera la participación de más de 600 estudiantes de General Alvear, quienes recorrerán los distintos stands, participarán de charlas informativas y podrán resolver sus dudas directamente con representantes de cada institución.",
+        "Con esta nueva edición, la Cámara Joven reafirma su compromiso con el desarrollo educativo y el futuro de los jóvenes alvearenses, consolidando a la Oferta Educativa como uno de los eventos de orientación vocacional más importantes del departamento."
+        ]
+    },
+    {
+        id: "creactiva-2026",
+        date: "2026-07-02",
+        dateLabel: "2/7/2026",
+        author: "Cámara Joven Alvear",
+        tags: [{ label: "Congreso", color: "#b85d24" }],
+        title: "Segunda Edición del congreso CREACTIVA",
+        excerpt: "CREACtiva 2026, el Congreso de Emprendedurismo de la Cámara Joven, prepara su segunda edición junto a importantes instituciones para fortalecer los conocimientos y abordar los desafíos de la ganadería y la agricultura.",
+        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80",
+        content: [
+        "La Cámara Joven de General Alvear ya trabaja en la organización de la segunda edición de CREACtiva, el Congreso de Emprendedurismo que busca impulsar el desarrollo, la innovación y la formación de emprendedores del departamento y la región.",
+        "En esta nueva edición, el congreso contará con el acompañamiento de importantes instituciones públicas y privadas, consolidando un espacio de trabajo conjunto para potenciar el ecosistema emprendedor y generar nuevas oportunidades de crecimiento.",
+        "CREACtiva 2026 pondrá el foco en las principales problemáticas y desafíos que enfrenta el sector productivo, especialmente en materia de ganadería y agricultura, promoviendo el intercambio de conocimientos, experiencias y soluciones innovadoras.",
+        "A través de disertaciones, paneles y espacios de networking, el evento buscará fortalecer las capacidades de emprendedores, productores y profesionales, reafirmando el compromiso de la Cámara Joven con el desarrollo económico y productivo de General Alvear."
+        ]
+    }
+];
+
+/*INSTITUCIONES EDUCATIVAS ACLARACIONES PARA MI :)*/
+/* Para agregar el "l" (logo) de una institución, copiá el archivo .png
+   dentro de la carpeta "publicidad/" (al lado de este HTML) y poné
+   la ruta en el campo "l", por ejemplo:
+   "l": "publicidad/mi-institucion-l.png"
+   (también podés pegar una URL completa, ej: "https://misitio.com/l.png").
+   Si se deja vacío "", se muestra automáticamente un ícono con las
+   iniciales del nombre. Cada elemento de "programs" es un texto libre:
+   agregá o quitá líneas para editar la oferta educativa de cada institución. */
+const INSTITUTIONS = [
+    /*UNIVERSIDADES */
+    {
+        id: "fcen-uncuyo",
+        name: "Facultad de Ciencias Exactas y Naturales - UNCuyo",
+        type: "Universidad",
+        l: "publicidad/fcen-logo.png",
+        address: "Marques Aguado 84, Alvear Oeste, Gral. Alvear, Mza.",
+        phone: "Leandro Rojo +54 9 2604 568880 / Valentina Gattera +54 9 2625 404452",
+        email: "sedegeneralalvear@fcen.uncu.edu.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Profesorados en Ciencias Básicas (Biología, Química, Física y Matemática)",
+            "Licenciaturas en Ciencias Básicas (Biología, Química, Física y Matemática)",
+            "Licenciatura en Geología",
+            "Ciclo básico de FCEN-UNCuyo",
+            "Capacitaciones docentes y cursos de extensión"
+        ]
+    },
+    {
+        id: "blas-pascal",
+        name: "Universidad Blas Pascal",
+        type: "Universitaria",
+        l: "publicidad/blas-pascal-logo.png",
+        address: "Av. Alvear Oeste 650, General Alvear, Mza.",
+        phone: "2625 647 455 (WhatsApp)",
+        email: "generalalvear@redpascal.com.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial y a distancia",
+        programs: [
+            "Abogacía",
+            "Contador Público",
+            "Ingeniería Informática",
+            "Ingeniería en Telecomunicaciones",
+            "Arquitectura (modalidad Online Plus disponible)",
+            "Licenciatura en Administración",
+            "Licenciatura en Comercio Internacional",
+            "Licenciatura en Comunicación Institucional",
+            "Licenciatura en Comunicación Audiovisual (parcialmente online)",
+            "Licenciatura en Educación Primaria",
+            "Licenciatura en Enseñanza del Inglés",
+            "Licenciatura en Educación Física",
+            "Licenciatura en Diseño Gráfico",
+            "Licenciatura en Gestión Ambiental",
+            "Licenciatura en Gestión Deportiva",
+            "Licenciatura en Gestión de Instituciones Educativas",
+            "Licenciatura en Gestión de Recursos Humanos",
+            "Licenciatura en Marketing",
+            "Licenciatura en Periodismo y Nuevos Medios",
+            "Licenciatura en Psicopedagogía",
+            "Licenciatura en Publicidad",
+            "Licenciatura en Relaciones Públicas",
+            "Licenciatura en Seguridad (Gestión de la seguridad)",
+            "Licenciatura en Turismo",
+            "Licenciatura en Gestión de la Educación en Contextos de Encierro",
+            "Martillero, Corredor Público e Inmobiliario (a distancia)",
+            "Tecnicatura Superior en Administración de Empresas (a distancia)",
+            "Tecnicatura en Administración de Recursos Humanos (a distancia)",
+            "Tecnicatura en Sociedades Cooperativas (a distancia)",
+            "Tecnicatura en Gestión Bancaria (a distancia)",
+            "Tecnicatura en Gestión de Empresas Agropecuarias (a distancia)",
+            "Tecnicatura en Gestión de PYMES (a distancia)",
+            "Doctorado en Derecho (online)",
+            "Maestría en Dirección y Gestión de Organizaciones (online)",
+            "Maestría en Recursos Humanos (online)",
+            "Diplomatura en Derecho Procesal Civil y Penal (online)",
+            "Diplomatura en Prevención y Tratamiento de la Violencia (online)",
+            "Diplomatura en Seguridad Ciudadana (online)",
+            "Especialización en Gestión de Tecnologías (online)",
+            "Especialización en Derecho Procesal de las Ejecuciones (online)",
+            "Especialización en Derecho Laboral (online)",
+            "Especialización en Derecho Penal Económico (online)"
+        ]
+    },
+    {
+        id: "ucasal",
+        name: "Universidad Católica de Salta (Extensión)",
+        type: "Universidad",
+        l: "publicidad/ucasal-logo.png",
+        address: "Chapeaurouge 15 (Dirección de Educación), Gral. Alvear, Mza.",
+        phone: "2625 415942",
+        email: "gralalvear@ucasal.edu.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Abogacía",
+            "Contador Público",
+            "Licenciatura en Administración de Empresas",
+            "Licenciatura en Relaciones Internacionales",
+            "Licenciatura en Gestión Educativa",
+            "Licenciatura en Comercialización",
+            "Licenciatura en Recursos Humanos",
+            "Licenciatura en Seguridad (Ciclo complementario)",
+            "Licenciatura en Educación Física (Ciclo complementario)",
+            "Licenciatura en Ciencia de Datos",
+            "Tecnicatura en Secretariado Ejecutivo",
+            "Tecnicatura en Ceremonial y Protocolo",
+            "Tecnicatura en Higiene y Seguridad en el Trabajo",
+            "Tecnicatura en Gestión de Bancos y Empresas Financieras"
+        ]
+    },
+    {
+        id: "ufasta",
+        name: "Universidad FASTA (UFASTA)",
+        type: "Unidad de Apoyo Académico",
+        l: "publicidad/ufasta-logo.png",
+        address: "Ingeniero Lange 375 (Instituto San Antonio), Gral. Alvear, Mza.",
+        phone: "02625 432742",
+        email: "",
+        hours: "Lunes, miércoles y viernes de 19 a 21 hs",
+        website: "",
+        modality: "A distancia / online",
+        programs: [
+            "Licenciaturas y Ciclos Complementarios en Educación",
+            "Licenciatura en Inglés",
+            "Licenciatura en Educación Física",
+            "Licenciatura en Tecnología Educativa",
+            "Licenciatura en Psicopedagogía",
+            "Especialización en Planificación y Gestión Estratégica de Proyectos Educativos",
+            "Maestría en Tecnologías Digitales",
+            "Especialización en Ciencias Aplicadas al Rendimiento Motriz",
+            "Tecnicatura y Licenciatura en Higiene y Seguridad",
+            "Licenciatura en Ciberseguridad",
+            "Especialización en Informática Forense",
+            "Abogacía",
+            "Martillero y Corredor Público",
+            "Licenciatura en Archivología",
+            "Licenciatura en Seguridad Ciudadana",
+            "Contador Público",
+            "Licenciatura en Recursos Humanos",
+            "Licenciatura en Turismo",
+            "Licenciatura en Marketing",
+            "Licenciatura en Administración y Gestión del Talento Humano",
+            "Licenciatura en Periodismo",
+            "Licenciatura en Diseño y Comunicación Transmedia",
+            "Licenciatura en Comunicación Social",
+            "Licenciatura en Gestión de la Comunicación Estratégica",
+            "Licenciatura en Publicidad y Narrativas Digitales",
+            "Tecnicatura en Gastronomía",
+            "Tecnicatura en Turismo y Hotelería",
+            "Licenciatura en Educación Religiosa",
+            "Licenciatura en Pedagogía de la Educación Religiosa",
+            "Tecnicatura Universitaria en Acompañamiento Terapéutico"
+        ]
+    },
+    {
+        id: "maza",
+        name: "Universidad Juan Agustín Maza (Extensión Áulica)",
+        type: "Universitaria",
+        l: "publicidad/universidad-maza-logo.jpg",
+        address: "Polideportivo \"Deportistas Alvearenses\", Estanislao Zeballos Nº 1500, General Alvear, Mza.",
+        phone: "",
+        email: "secretariaedu@umaza.edu.ar / ingreso@umaza.edu.ar",
+        hours: "Viernes y sábados",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Profesorado en Educación Física",
+            "Licenciatura en Educación Física"
+        ]
+    },
+    {
+        id: "siglo21",
+        name: "Universidad Siglo XXI (CAU)",
+        type: "Universitaria",
+        l: "publicidad/universidad-siglo21-logo.png",
+        address: "Dr. Ricardo Piérola 162, Gral. Alvear, Mza.",
+        phone: "0810-555-0202",
+        email: "",
+        hours: "",
+        website: "",
+        modality: "Educación distribuida / 100% virtual para muchas carreras (teleclases y plataforma online)",
+        programs: [
+            "Abogacía",
+            "Contador Público",
+            "Escribanía",
+            "Licenciatura en Administración",
+            "Licenciatura en Administración Agraria",
+            "Licenciatura en Comercio Internacional",
+            "Licenciatura en Comercio (Marketing)",
+            "Licenciatura en Educación (Ciclo Complementario)",
+            "Licenciatura en Relaciones Internacionales",
+            "Licenciatura en Ciencia Política y Gobierno",
+            "Licenciatura en Relaciones Públicas e Institucionales",
+            "Licenciatura en Higiene y Seguridad Laboral",
+            "Licenciatura en Publicidad",
+            "Licenciatura en Terapia Ocupacional y Desarrollo Humano",
+            "Martillero, Corredor Público e Inmobiliario",
+            "Procurador",
+            "Tecnicatura Universitaria en Higiene y Seguridad Laboral",
+            "Tecnicatura en Gestión Contable e Impositiva",
+            "Tecnicatura en Dirección de Equipos de Venta",
+            "Tecnicatura en Relaciones Laborales",
+            "Tecnicatura en Administración y Gestión Tributaria",
+            "Tecnicatura en Responsabilidad y Gestión Social",
+            "Tecnicatura en Gestión de Empresas Familiares"
+        ]
+    },
+
+    /*NIVEL SUPERIOR */
+    {
+        id: "calafat",
+        name: "Instituto de Educación Superior N° 9-007 Dr. Salvador Calafat",
+        type: "Nivel Superior",
+        l: "publicidad/ies-salvador-calafat-logo.jpg",
+        address: "Roca 327, planta alta, Gral. Alvear, Mza.",
+        phone: "2625-456061",
+        email: "ies9007@gmail.com",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Profesorado en Artes Visuales",
+            "Profesorado en Lengua y Literatura",
+            "Tecnicatura Superior en Comercio Internacional y Aduanas (a distancia)",
+            "Tecnicatura Superior en Desarrollo de Software",
+            "Enfermería Profesional",
+            "Tecnicatura Superior en Higiene y Seguridad Laboral",
+            "Tecnicatura Superior en Enología",
+            "Tecnicatura Superior en Bromatología e Industria de los Alimentos",
+            "Tecnicatura Superior en Turismo y Hotelería"
+        ]
+    },
+    {
+        id: "san-antonio",
+        name: "Instituto San Antonio",
+        type: "Nivel Superior",
+        l: "publicidad/instituto-san-antonio-logo.jpg",
+        address: "Ingeniero Lange 375, Gral. Alvear, Mza.",
+        phone: "2625 42-5111",
+        email: "nivelsuperior@isaalvear.edu.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Profesorado de Educación Primaria",
+            "Profesorado de Educación Especial"
+        ]
+    },
+    {
+        id: "itu",
+        name: "Instituto Tecnológico Universitario (ITU)",
+        type: "Nivel Superior",
+        l: "publicidad/itu-logo.jpg",
+        address: "Chapeaurouge 163, General Alvear, Mza.",
+        phone: "2625 469957",
+        email: "secretaria.alvear@itu.uncu.edu.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Gestión de Empresas"
+        ]
+    },
+    {
+        id: "iusp",
+        name: "Instituto Universitario de Seguridad Pública (IUSP)",
+        type: "Nivel Superior",
+        l: "publicidad/iusp-logo.png",
+        address: "Estanislao Zeballos Nº 1500 (Polideportivo Deportistas Alvearenses), Gral. Alvear, Mza.",
+        phone: "2625-637287",
+        email: "iuspalvear@mendoza.gov.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Tecnicatura Universitaria en Seguridad Pública (Pregrado)",
+            "Tecnicatura Universitaria en Seguridad Penitenciaria (Pregrado)",
+            "Licenciatura en Seguridad Pública (Grado)",
+            "Licenciatura en Seguridad Penitenciaria (Grado)"
+        ]
+    },
+    {
+        id: "egg",
+        name: "EGG",
+        type: "Nivel Superior",
+        l: "publicidad/egg-logo.png",
+        address: "Gral. Alvear, Mza.",
+        phone: "",
+        email: "",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Programación Full Stack",
+            "Preuniversitario: Salud",
+            "Preuniversitario: Ingeniería",
+            "Preuniversitario: Arquitectura"
+        ]
+    },
+    {
+        id: "ugacoop",
+        name: "Instituto de Educación Superior Alvear UGACOOP",
+        type: "Nivel Superior",
+        l: "publicidad/ugacoop-logo.png",
+        address: "Silvio Tricherri y Ruta 188, Gral. Alvear, Mza.",
+        phone: "2625 425831",
+        email: "ugacoopidesa2020@gmail.com",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Tecnicatura Superior en Diseño de Indumentaria, Textil y Accesorios",
+            "Tecnicatura Superior en Biotecnología",
+            "Tecnicatura Superior en Mecatrónica Aplicada a la Industria"
+        ]
+    },
+
+    /*FORMACIÓN TÉCNICA / TERCIARIA / EMPLEO*/
+    {
+        id: "aprehender",
+        name: "Instituto Aprehender",
+        type: "Formación para Empleo y Emprendimiento, Técnica, Terciaria/Curso",
+        l: "publicidad/instituto-aprehender-logo.png",
+        address: "Av. Alvear Oeste 650, General Alvear, Mza.",
+        phone: "262-552-0012",
+        email: "info@institutoaprehender.com.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial y Virtual",
+        programs: [
+            "Gestor Judicial, Gestor Previsional y Gestor del Automotor (Presencial y Virtual)",
+            "Secretariado Jurídico, Notarial e Inmobiliario (Presencial y Virtual)",
+            "Secretariado Administrativo con manejo de PC (Presencial)",
+            "Secretariado Administrativo (Virtual)",
+            "Operador Office – Manejo de PC (Presencial)",
+            "Manejo de Redes Sociales (Virtual)",
+            "Manicura profesional y nail-art (Presencial)",
+            "Maquillaje profesional y peinados (Presencial)",
+            "Auxiliar de podología (Presencial)",
+            "Cosmetología (Presencial)",
+            "Masajista profesional (Presencial)",
+            "Auxiliar en enfermería clínica y domiciliaria (Presencial)",
+            "Extraccionista y manejo de laboratorio y análisis clínicos (Presencial)",
+            "Administrativo de laboratorio de análisis clínicos (Presencial y Virtual)",
+            "Auxiliar de farmacia (Presencial y Virtual)",
+            "Secretariado Médico administrativo (Presencial y Virtual)",
+            "Asistente geriátrico (Presencial y Virtual)",
+            "Auxiliar de radiología (Presencial y Virtual)",
+            "Personal trainer (Presencial y Virtual)",
+            "Reparación y programación de celulares (Presencial)",
+            "Armado y reparación de PC y notebook (Presencial)",
+            "Instalación de cámaras y alarmas de seguridad (Presencial)",
+            "Electricidad domiciliaria (Presencial)",
+            "Instalador de aire acondicionado split (Presencial)",
+            "Asistente en hotelería y turismo (Virtual)",
+            "Acompañante terapéutico (Virtual)",
+            "Auxiliar en estimulación temprana (Virtual)",
+            "Asistente de seguridad e higiene (Virtual)"
+        ]
+    },
+    {
+        id: "consultora-horlacher",
+        name: "Consultora Horlacher y Asociados",
+        type: "Formación para Empleo y Emprendimiento, Técnica, Terciaria/Curso",
+        l: "publicidad/consultora-horlacher-logo.png",
+        address: "Gral. Alvear, Mza.",
+        phone: "2625661008 / 2625669690",
+        email: "enriquehorlacher@yahoo.com.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Dirección de empresas",
+            "Auxiliar en gestoría del automotor",
+            "Informática básica y avanzada",
+            "Auxiliar en recursos humanos",
+            "Tango gestión",
+            "Gerencia administrativa contable",
+            "Liquidación de sueldos",
+            "Marketing digital",
+            "Oratoria"
+        ]
+    },
+
+    /*SECUNDARIO PARA JÓVENES Y ADULTOS */
+    {
+        id: "cebja-carcano",
+        name: "CEBJA 3-036 Dr. Ramón Cárcano",
+        type: "Centro Educativo de Nivel Secundario, Educación de Jóvenes y Adultos",
+        l: "publicidad/cebja-3036-ramon-carcano-logo.png",
+        address: "Calle 25 y E., La Escandinava, Gral. Alvear, Mza.",
+        phone: "2625 533793",
+        email: "cebja3036@gmail.com",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Secundario para jóvenes y adultos"
+        ]
+    },
+    {
+        id: "cebja-ingenieros",
+        name: "CEBJA José Ingenieros",
+        type: "Centro Educativo de Nivel Secundario, Educación de Jóvenes y Adultos",
+        l: "publicidad/cebja-jose-ingenieros-logo.jpg",
+        address: "Roca 279, Gral. Alvear, Mza.",
+        phone: "2625 533793",
+        email: "dge3018@mendoza.edu.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Secundario para jóvenes y adultos",
+            "Bachiller en economía y administración"
+        ]
+    },
+    {
+        id: "cens-garro",
+        name: "CENS 3-433 Patricia Daniela Garro",
+        type: "Centro Educativo de Nivel Secundario, Educación de Jóvenes y Adultos",
+        l: "publicidad/cens-3433-logo.png",
+        address: "Sarmiento 253, Bowen, Mendoza",
+        phone: "2625 533793",
+        email: "dge3433@mendoza.edu.ar",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Nivel Secundario para jóvenes y adultos",
+            "Bachiller en economía y administración"
+        ]
+    },
+
+    /*CAPACITACIÓN LABORAL Y FORMACIÓN PROFESIONAL (CCT)*/
+    {
+        id: "battini",
+        name: "CCT 6-204 Concejal Peregrino Battini",
+        type: "Capacitación Laboral y Formación Profesional",
+        l: "publicidad/descarga.jpg",
+        address: "Sarmiento N°90, General Alvear, Mza.",
+        phone: "2625 459298 (Celular Director)",
+        email: "cct6204sup@gmail.com",
+        hours: "Turno Tarde: lunes a viernes 14 a 16 hs / Turno Nocturno: lunes a viernes 20 a 23 hs",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Mecánica del Automotor (a partir de los 16 años - Turno Tarde)",
+            "Carpintería (a partir de los 16 años - Turno Tarde)",
+            "Soldador Básico (a partir de los 18 años - Turno Tarde)",
+            "Soldador Básico (Turno Nocturno, 18 años cumplidos)",
+            "Mecánica del Automotor (Turno Nocturno, 18 años cumplidos)",
+            "Operador de PC Nivel 1, 2 y 3 (Turno Nocturno)",
+            "Electricidad del Automotor (Turno Nocturno)",
+            "Instalaciones Sanitarias y Gas (Turno Nocturno)",
+            "Electricidad Domiciliaria e Industrial (Turno Nocturno)"
+        ]
+    },
+    {
+        id: "obligado",
+        name: "CCT 6-305 Carlos Obligado",
+        type: "Centro de Capacitación para el Trabajo y Formación Profesional",
+        l: "publicidad/cct-carlos-obligado-logo.png",
+        address: "Liniers 120, Gral. Alvear, Mza.",
+        phone: "02625 42-4221",
+        email: "cct6035supe@gmail.com",
+        hours: "Lunes a viernes de 8 a 12 y de 14 a 18 hs",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Operador de máquinas industriales",
+            "Confeccionista a medida / Modista",
+            "Gastronomía: Cocinero (Formación profesional)",
+            "Estética Personal: Corte y maquillaje",
+            "Labores a mano: 2 agujas, crochet, bordados mexicanos, peruanos, hindú y tailandés",
+            "Informática: Operador de PC nivel 1 y 2",
+            "Artes aplicadas: Vitrofusión, artesanías y manualidades, artesanías en cuero: tapicería"
+        ]
+    },
+    {
+        id: "agricola",
+        name: "CCT 6-401 Educación Agrícola",
+        type: "Centro de Capacitación para el Trabajo",
+        l: "publicidad/educacionagricola.jpg",
+        address: "Prolongación Calle 3 S/N, Bowen, Gral. Alvear, Mza.",
+        phone: "2625 414437",
+        email: "metgutierrez@hotmail.com",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Centro de capacitación para el trabajo - Educación Agrícola"
+        ]
+    },
+    {
+        id: "mision-rural",
+        name: "CCT N° 6-308 Misión de Cultura Rural",
+        type: "Centro de Capacitación para el Trabajo y Formación Profesional",
+        l: "publicidad/cct-6308-mision-rural-logo.jpg",
+        address: "Calle Christophersen s/n, Carmensa (Centro núcleo), y aula anexa en Laprida N° 58, Colonia Alvear Oeste",
+        phone: "2625 413108 (Director)",
+        email: "alejandroburin@gmail.com",
+        hours: "",
+        website: "",
+        modality: "Presencial",
+        programs: [
+            "Gastronomía (Formación Profesional)",
+            "Electricidad (Formación Profesional)",
+            "Bordado (Capacitación para el trabajo)",
+            "Carpintería (Capacitación para el trabajo)",
+            "Cerámica (Capacitación Laboral)",
+            "Informática: Operador de PC Nivel I, II y III (Capacitación para el trabajo)",
+            "Área Textil (Formación Profesional)",
+            "Estética personal - Peluquería – Cortes (Capacitación para el trabajo)",
+            "Idioma Inglés (Capacitación para el trabajo)"
+        ]
+    }
+];
+
+/* Sección Aliados y Patners */
+
+const PARTNERS = [
+    { name: "Universidad Blas Pascal", l: "publicidad/blas-pascal-logo.png" },
+    { name: "IES 9007 Dr. Salvador Calafat", l: "publicidad/ies-salvador-calafat-logo.png" },
+    { name: "Instituto Aprehender", l: "publicidad/instituto-aprehender-logo.png" },
+    { name: "Facultad de Ciencias Aplicadas a la Industria", l: "publicidad/fcai-logo.png" },
+    { name: "UNCUYO - Facultad de Ciencias Exactas y Naturales", l: "publicidad/fcen-logo.png" },
+    { name: "ITU", l: "publicidad/itu-logo.jpg" },
+    { name: "Siglo", l: "publicidad/universidad-siglo21-logo.png" },
+    { name: "Fasta", l: "publicidad/ufasta-logo.png" },
+    { name: "MAZA", l: "publicidad/universidad-maza-logo.jpg" },
+    { name: "UCSAL", l: "publicidad/ucasal-logo.png" },
+    { name: "Instituto Universitario de Seguridad Pública (IUSP)", l: "publicidad/iusp-logo.png" },
+    { name: "egg", l: "publicidad/egg-logo.png" }
+    
+];
+
+function renderPartners() {
+    const grid = document.getElementById("partnersGrid");
+    if (!grid) return;
+    grid.innerHTML = PARTNERS.map(p => `
+        <div class="partner-l-item" title="${p.name}">
+            <img src="${p.l}" alt="${p.name}" loading="lazy"
+                 onerror="this.parentElement.innerHTML='<span class=\\'partner-l-fallback\\'>${p.name}</span>';" />
+        </div>
+    `).join("");
+}
+
+/* Utilidades */
+
+const AVATAR_COLORS = ["#5599db", "#b85d24", "#2e7d32", "#8b5cf6", "#dd2a7b", "#0e7490", "#c2410c"];
+
+function initials(name) {
+    const words = name.replace(/^(CCT|CEBAJA)\s*[\d°N.\-]*\s*/i, "").trim().split(/\s+/);
+    return (words[0]?.[0] || "").toUpperCase() + (words[1]?.[0] || "").toUpperCase();
+}
+function colorFor(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    return AVATAR_COLORS[Math.abs(hash) % AVATAR_COLORS.length];
+}
+function lMarkup(item, size) {
+    if (item.l) {
+        return `<img src="${item.l}" alt="l de ${item.name}" onerror="this.parentElement.innerHTML='${initials(item.name)}'; this.parentElement.style.background='${colorFor(item.name)}';" />`;
+    }
+    return initials(item.name);
+}
+function iconPin() { return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>`; }
+function iconMail() { return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`; }
+function iconPhone() { return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`; }
+function iconClock() { return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`; }
+function iconGlobe() { return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`; }
+function iconCalendar() { return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>`; }
+function iconGradCap() { return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.84l8.57 3.905a2 2 0 0 0 1.66 0z"/><path d="M22 10.5V16"/><path d="M6 12.5V17c0 1.657 2.686 3 6 3s6-1.343 6-3v-4.5"/></svg>`; }
+function iconBookOpen() { return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`; }
+function iconCheck() { return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>`; }
+function iconClipboard() { return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>`; }
+function iconNewspaper() { return `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M18 10h-8"/><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V4Z"/></svg>`; }
+function iconSchool() { return `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 8-4 8 4"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg>`; }
+
+
+/* RENDER: NOTICIAS */
+
+function renderNews() {
+    const grid = document.getElementById("newsGrid");
+    grid.innerHTML = NEWS.map(n => `
+        <a href="#noticias/${n.id}" class="news-card">
+            <div class="thumb">
+                <img src="${n.image}" alt="${n.title}" loading="lazy" onerror="this.src='https://placehold.co/600x375/5599db/ffffff?text=Cámara+Joven+Alvear'" />
+                <div class="news-tags">
+                    ${n.tags.map(t => `<span class="news-tag" style="background:${t.color};">${t.label}</span>`).join("")}
+                </div>
+            </div>
+            <div class="news-body">
+                <div class="news-meta">
+                    <span class="flex items-center gap-1">${iconCalendar()} ${n.dateLabel}</span>
+                    <span class="news-dot"></span>
+                    <span>${n.author}</span>
+                </div>
+                <h3 style="font-size:1.05rem; font-weight:700; color:var(--gray-900); line-height:1.35;">${n.title}</h3>
+                <p style="font-size:.87rem; color:var(--gray-600); line-height:1.55; flex:1;">${n.excerpt}</p>
+                <span class="btn-ghost">Leer más →</span>
+            </div>
+        </a>
+    `).join("");
+}
+
+function renderNewsDetail(id) {
+    const n = NEWS.find(x => x.id === id);
+    const container = document.getElementById("noticiaDetalleContent");
+    if (!n) {
+        container.innerHTML = `<div class="empty-state"><p style="color:var(--gray-400);">${iconNewspaper()}</p><p style="font-weight:600; margin-top:.5rem;">No encontramos esta noticia</p></div>`;
+        return;
+    }
+    container.innerHTML = `
+        <div class="article-header-img">
+            <img src="${n.image}" alt="${n.title}" onerror="this.src='https://placehold.co/1200x600/5599db/ffffff?text=Cámara+Joven+Alvear'" />
+        </div>
+        <div class="flex items-center gap-3" style="margin-top:1.5rem;">
+            ${n.tags.map(t => `<span class="news-tag" style="background:${t.color};">${t.label}</span>`).join("")}
+        </div>
+        <h1 style="font-size:2rem; font-weight:800; color:var(--gray-900); margin-top:.9rem; line-height:1.25;">${n.title}</h1>
+        <div class="news-meta" style="margin-top:.6rem;">
+            <span class="flex items-center gap-1">${iconCalendar()} ${n.dateLabel}</span>
+            <span class="news-dot"></span>
+            <span class="text-primary-dark" style="font-weight:600;">${n.author}</span>
+        </div>
+        <div class="article-body" style="margin-top:1.75rem;">
+            ${n.content.map(p => `<p>${p}</p>`).join("")}
+        </div>
+    `;
+}
+
+/* RENDER: OFERTA EDUCATIVA */
+
+function updateOfertaStats() {
+    document.getElementById("statInstituciones").textContent = INSTITUTIONS.length;
+    document.getElementById("statProgramas").textContent = INSTITUTIONS.reduce((sum, i) => sum + i.programs.length, 0);
+}
+
+function institutionCard(inst) {
+    return `
+        <div class="institution-card">
+            <div class="flex items-start gap-3">
+                <div class="inst-l" style="background:${inst.l ? 'transparent' : colorFor(inst.name)};">${lMarkup(inst)}</div>
+                <div style="flex:1;">
+                    <h3 style="font-weight:700; color:var(--gray-900); font-size:1.02rem; line-height:1.3;">${inst.name}</h3>
+                    <span class="tag-pill" style="margin-top:.4rem; display:inline-block;">${inst.type}</span>
+                </div>
+            </div>
+            <span class="program-badge flex items-center gap-1" style="align-self:flex-start;">${iconGradCap()} ${inst.programs.length} programa${inst.programs.length > 1 ? "s" : ""} disponible${inst.programs.length > 1 ? "s" : ""}</span>
+            <div class="flex flex-col gap-2">
+                ${inst.address ? `<div class="inst-contact-row">${iconPin()}<span>${inst.address}</span></div>` : ""}
+                ${inst.email ? `<div class="inst-contact-row">${iconMail()}<span>${inst.email}</span></div>` : ""}
+                ${inst.phone ? `<div class="inst-contact-row">${iconPhone()}<span>${inst.phone}</span></div>` : ""}
+            </div>
+            <a href="#oferta-educativa/${inst.id}" class="btn btn-outline btn-block">${iconBookOpen()} Ver programas</a>
+        </div>
+    `;
+}
+
+function filterInstitutions(query) {
+    const q = (query || "").trim().toLowerCase();
+    const grid = document.getElementById("institutionsGrid");
+    const empty = document.getElementById("ofertaEmpty");
+    const results = INSTITUTIONS.filter(i => {
+        if (!q) return true;
+        const haystack = [i.name, i.type, ...i.programs].join(" ").toLowerCase();
+        return haystack.includes(q);
+    });
+    grid.innerHTML = results.map(institutionCard).join("");
+    grid.style.display = results.length ? "grid" : "none";
+    empty.style.display = results.length ? "none" : "block";
+    document.getElementById("ofertaCount").textContent =
+        `${results.length} programa${results.length === 1 ? "" : "s"} disponible${results.length === 1 ? "" : "s"}` +
+        (q ? ` para "${query}"` : "");
+}
+
+function renderInstitutionDetail(id) {
+    const inst = INSTITUTIONS.find(x => x.id === id);
+    const container = document.getElementById("institucionDetalleContent");
+    if (!inst) {
+        container.innerHTML = `<div class="empty-state"><p style="color:var(--gray-400);">${iconSchool()}</p><p style="font-weight:600; margin-top:.5rem;">No encontramos esta institución</p></div>`;
+        return;
+    }
+    container.innerHTML = `
+        <div class="inst-hero">
+            <div class="flex items-center gap-5" style="position:relative; z-index:1; flex-wrap:wrap;">
+                <div class="inst-hero-l" style="background:${inst.l ? 'rgba(255,255,255,.16)' : 'rgba(255,255,255,.18)'};">${lMarkup(inst)}</div>
+                <div style="flex:1; min-width:14rem;">
+                    <span class="badge" style="background:rgba(255,255,255,.18); color:#fff;">${inst.type}</span>
+                    <h1 style="font-size:1.7rem; font-weight:800; color:#fff; margin-top:.6rem; line-height:1.25;">${inst.name}</h1>
+                </div>
+                ${inst.website ? `<a href="${inst.website}" target="_blank" rel="noopener noreferrer"><button class="btn" style="background:#fff; color:var(--primary-dark);">${iconGlobe()} Ver sitio web</button></a>` : ""}
+            </div>
+        </div>
+
+        <div class="grid grid-2 gap-6" style="margin-top:2rem; align-items:start;">
+            <div class="info-card">
+                <h3>${iconBookOpen()} Oferta educativa</h3>
+                <ul class="program-list">
+                    ${inst.programs.map(p => `<li class="program-list-item"><span class="program-list-ico">${iconCheck()}</span><span>${p}</span></li>`).join("")}
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>${iconClipboard()} Datos de la institución</h3>
+                ${inst.address ? `<div class="info-row"><span class="ico">${iconPin()}</span><div><p class="lbl">Dirección</p><p class="val">${inst.address}</p></div></div>` : ""}
+                ${inst.phone ? `<div class="info-row"><span class="ico">${iconPhone()}</span><div><p class="lbl">Teléfono</p><p class="val">${inst.phone}</p></div></div>` : ""}
+                ${inst.email ? `<div class="info-row"><span class="ico">${iconMail()}</span><div><p class="lbl">Correo electrónico</p><p class="val"><a href="mailto:${inst.email}" class="text-primary-dark">${inst.email}</a></p></div></div>` : ""}
+                ${inst.hours ? `<div class="info-row"><span class="ico">${iconClock()}</span><div><p class="lbl">Horarios</p><p class="val">${inst.hours}</p></div></div>` : ""}
+                <div class="info-row"><span class="ico">${iconGradCap()}</span><div><p class="lbl">Modalidad de enseñanza</p><p class="val">${inst.modality}</p></div></div>
+            </div>
+        </div>
+    `;
+}
+/* ROUTER */
+const VALID_PAGES = ["quienes-somos", "noticias", "oferta-educativa", "contacto"];
+
+function router() {
+    let hash = decodeURIComponent(location.hash.replace("#", "")) || "quienes-somos";
+    const [base, sub] = hash.split("/");
+
+    let pageId = base;
+    if (base === "noticias" && sub) {
+        pageId = "noticia-detalle";
+        renderNewsDetail(sub);
+    } else if (base === "oferta-educativa" && sub) {
+        pageId = "institucion-detalle";
+        renderInstitutionDetail(sub);
+    } else if (!VALID_PAGES.includes(base)) {
+        pageId = "quienes-somos";
+    }
+
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    const target = document.getElementById("page-" + pageId);
+    (target || document.getElementById("page-quienes-somos")).classList.add("active");
+
+    document.querySelectorAll("[data-nav]").forEach(a => {
+        a.classList.toggle("active", a.getAttribute("data-nav") === base);
+    });
+
+    document.getElementById("mobileMenu")?.classList.remove("open");
+    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+}
+/* MENÚ MÓVIL*/
+(function () {
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("mobileMenu");
+    if (toggle && menu) {
+        toggle.addEventListener("click", () => menu.classList.toggle("open"));
+    }
+})();
+/* INICIALIZACIÓN */
+renderNews();
+updateOfertaStats();
+filterInstitutions("");
+renderPartners();
+window.addEventListener("hashchange", router);
+window.addEventListener("DOMContentLoaded", router);
+router();
+</script>
+</body>
+</html>
