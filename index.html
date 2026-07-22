@@ -4,7 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Cámara Joven Alvear</title>
-<meta name="description" content="Cámara Joven Alvear — rama joven de la Cámara de Comercio de General Alvear. Formación, networking y oportunidades para la juventud alvearense." />
+<meta name="description" content="Cámara Joven Alvear — Rama joven de la Cámara de Comercio de General Alvear. Formación, networking y oportunidades para la juventud alvearense." />
+<link rel="icon" type="image/png" href="publicidad/logocj.png" />
+<link rel="shortcut icon" type="image/png" href="publicidad/logocj.png" />
+<link rel="apple-touch-icon" href="publicidad/logocj.png" />
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -181,7 +184,12 @@
     }
     .chip-top { top: 4%; left: -6%; }
     .chip-bottom { bottom: 4%; right: -8%; }
-    @media (max-width: 640px) { .chip-top{left:0;} .chip-bottom{right:0;} }
+    @media (max-width: 640px) {
+        .hero-photo-wrap { max-width: 20rem; margin: 2rem auto 1.5rem; }
+        .floating-chip { padding: .4rem .8rem; font-size: .7rem; }
+        .chip-top { top: -1.5rem; left: 0.5rem; }
+        .chip-bottom { bottom: -1.5rem; right: 0.5rem; }
+    }
 
     .mv-card { padding: 2rem; border-radius: 1.25rem; background: #fff; border: 1px solid var(--gray-100); box-shadow: 0 1px 3px rgba(0,0,0,.04); }
     .mv-icon {
@@ -456,6 +464,29 @@
         </div>
     </section>
 
+    <!-- Oferta Educativa -->
+    <section class="block block-alt">
+        <div class="container-custom">
+            <div class="cta-gradient" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark));">
+                <div class="cta-icon-circle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.84l8.57 3.905a2 2 0 0 0 1.66 0z"/><path d="M22 10.5V16"/><path d="M6 12.5V17c0 1.657 2.686 3 6 3s6-1.343 6-3v-4.5"/></svg>
+                </div>
+                <h3 style="font-size:1.75rem; font-weight:800; color:#fff;">Conoce la Oferta Educativa de General Alvear</h3>
+                <p style="margin-top:.65rem; color:rgba(255,255,255,.88); max-width:32rem; margin-left:auto; margin-right:auto;">
+                    Explorá las instituciones y programas de formación disponibles en la ciudad para impulsar tu futuro profesional.
+                </p>
+                <div style="margin-top:1.75rem;">
+                    <a href="#oferta-educativa">
+                        <button class="btn" style="background:#fff; color:var(--primary-dark); padding:.9rem 2.25rem; font-size:1rem;">
+                            Ir a ver
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="block">
         <div class="container-custom">
@@ -648,7 +679,7 @@
                     </div>
                     <div class="bg-primary-soft-5" style="margin-top:1.25rem; padding:1.25rem 1.5rem; border-radius:1.25rem; border:1px solid rgba(85,153,219,.2);">
                         <p style="font-weight:700; color:var(--gray-900); font-size:.9rem;">Horario de atención</p>
-                        <p style="font-size:.85rem; color:var(--gray-600); margin-top:.3rem;">Lunes a viernes de 9 a 13 hs y de 16 a 19 hs</p>
+                        <p style="font-size:.85rem; color:var(--gray-600); margin-top:.3rem;">Lunes a viernes de 08:30 a 13:00 hs y de 17:30 a 20:30 hs</p>
                     </div>
                 </div>
             </div>
@@ -996,7 +1027,7 @@ const INSTITUTIONS = [
         id: "calafat",
         name: "Instituto de Educación Superior N° 9-007 Dr. Salvador Calafat",
         type: "Nivel Superior",
-        l: "publicidad/ies-salvador-calafat-logo.jpg",
+        l: "publicidad/ies-salvador-calafat-logo.png",
         address: "Roca 327, planta alta, Gral. Alvear, Mza.",
         phone: "2625-456061",
         email: "ies9007@gmail.com",
