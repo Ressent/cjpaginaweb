@@ -690,6 +690,70 @@
     .crea-orglogos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem; margin-top: 1.5rem; }
     .crea-orglogos img { height: 3.25rem; width: auto; object-fit: contain; }
     .crea-orglogos .org-name { display: flex; flex-direction: column; align-items: center; gap: .5rem; font-size: .78rem; color: var(--gray-500); font-weight: 600; }
+
+    /* ============ CreActivá post-evento ============ */
+    .crea-sparkles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+    .crea-sparkles span { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #fff; opacity: 0; animation: twinkle 4s ease-in-out infinite; box-shadow: 0 0 10px 2px rgba(255,255,255,.6); }
+    @keyframes twinkle { 0%,100% { opacity: 0; transform: scale(.4); } 50% { opacity: .9; transform: scale(1.2); } }
+
+    .avatar { position: relative; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; overflow: hidden; background: linear-gradient(135deg, var(--crea-violet-light), var(--crea-cyan)); flex-shrink: 0; letter-spacing: -.02em; }
+    .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .avatar.logo { background: #fff; color: var(--crea-violet-dark); border: 1px solid var(--gray-200); }
+    .avatar.logo img { object-fit: contain; padding: .55rem; background: #fff; }
+
+    .profile-card { display: flex; gap: 1.75rem; align-items: flex-start; background: #fff; border: 1px solid var(--gray-200); border-radius: 1.5rem; padding: 1.75rem; margin-bottom: 1.5rem; transition: all .3s cubic-bezier(.16,.8,.3,1); }
+    .profile-card:hover { transform: translateY(-4px); box-shadow: 0 24px 46px -22px rgba(76,29,149,.3); border-color: rgba(124,58,237,.35); }
+    .profile-card .avatar { width: 9rem; height: 9rem; border-radius: 1.5rem; font-size: 2.2rem; }
+    .profile-body { flex: 1; min-width: 0; }
+    .profile-name { font-size: 1.35rem; font-weight: 800; color: var(--gray-900); letter-spacing: -.01em; }
+    .profile-role { color: var(--crea-violet-dark); font-weight: 600; font-size: .9rem; margin-top: .15rem; }
+    .profile-topic { display: inline-block; margin-top: .6rem; background: rgba(124,58,237,.1); color: var(--crea-violet-dark); padding: .3rem .8rem; border-radius: 9999px; font-size: .76rem; font-weight: 700; }
+    .profile-bio { margin-top: .8rem; color: var(--gray-600); line-height: 1.7; font-size: .92rem; }
+    .links-label { margin-top: 1.1rem; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-500); }
+    .profile-links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .5rem; }
+    .social-chip { display: inline-flex; align-items: center; gap: .45rem; padding: .55rem 1rem; border-radius: 9999px; border: 1px solid var(--gray-200); font-size: .8rem; font-weight: 600; color: var(--gray-700); background: #fff; transition: all .2s ease; }
+    .social-chip:hover { border-color: var(--crea-violet); color: var(--crea-violet-dark); background: rgba(124,58,237,.07); transform: translateY(-2px); }
+    .social-chip.ig svg { color: #dd2a7b; }
+    .no-links { margin-top: 1rem; font-size: .82rem; color: var(--gray-400); }
+    @media (max-width: 640px) {
+        .profile-card { flex-direction: column; align-items: center; text-align: center; }
+        .profile-links { justify-content: center; }
+    }
+
+    .ent-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .5rem; background: #fff; border: 1px solid var(--gray-200); border-radius: 1.35rem; padding: 1.75rem 1.25rem; transition: all .3s cubic-bezier(.16,.8,.3,1); }
+    .ent-card:hover { transform: translateY(-6px); box-shadow: 0 24px 46px -20px rgba(184,93,36,.3); border-color: rgba(184,93,36,.4); }
+    .ent-card .avatar { width: 6rem; height: 6rem; border-radius: 1.4rem; font-size: 1.5rem; margin-bottom: .4rem; }
+    .ent-card h4 { font-size: 1.05rem; font-weight: 800; color: var(--gray-900); }
+    .ent-card .owner { font-size: .85rem; color: var(--gray-500); }
+    .ent-card .see { margin-top: .5rem; font-size: .82rem; font-weight: 700; color: var(--secondary); }
+
+    .ent-hero { display: flex; gap: 2rem; align-items: center; border-radius: 1.75rem; padding: 2.25rem; background: linear-gradient(135deg, var(--crea-violet-dark), var(--crea-violet) 60%, var(--crea-cyan) 140%); color: #fff; }
+    .ent-hero .avatar { width: 8.5rem; height: 8.5rem; border-radius: 1.6rem; font-size: 2.2rem; }
+    .ent-hero h1 { font-size: 2rem; font-weight: 800; letter-spacing: -.02em; }
+    .ent-hero p { color: rgba(255,255,255,.85); margin-top: .3rem; }
+    @media (max-width: 640px) { .ent-hero { flex-direction: column; text-align: center; padding: 1.75rem 1.25rem; } }
+
+    .cert-card { position: relative; overflow: hidden; background: #fff; border-radius: 1.75rem; padding: 2.25rem; border: 1px solid rgba(124,58,237,.25); box-shadow: 0 30px 60px -28px rgba(91,33,182,.4); }
+    .cert-card::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: .35rem; background: linear-gradient(90deg, var(--crea-violet), var(--crea-cyan), var(--secondary)); }
+    .cert-blob { position: absolute; width: 14rem; height: 14rem; border-radius: 50%; background: var(--crea-violet-light); opacity: .18; filter: blur(60px); top: -5rem; right: -4rem; pointer-events: none; }
+    .cert-head { position: relative; display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; }
+    .cert-head h3 { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); }
+    .cert-head p { color: var(--gray-500); font-size: .9rem; margin-top: .2rem; }
+    .cert-ico { width: 3.4rem; height: 3.4rem; border-radius: 1.1rem; background: linear-gradient(135deg, var(--crea-violet), var(--crea-cyan)); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cert-form { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .cert-full { grid-column: 1 / -1; }
+    .cert-field { display: flex; flex-direction: column; gap: .4rem; }
+    .cert-field span { font-size: .78rem; font-weight: 700; color: var(--gray-700); }
+    .cert-field input, .cert-field select { width: 100%; padding: .85rem 1.1rem; border-radius: .9rem; border: 1px solid var(--gray-300); font: inherit; font-size: .92rem; background: #fff; outline: none; transition: all .2s ease; }
+    .cert-field input:focus, .cert-field select:focus { border-color: var(--crea-violet); box-shadow: 0 0 0 4px rgba(124,58,237,.16); }
+    @media (max-width: 640px) { .cert-form { grid-template-columns: 1fr; } .cert-card { padding: 1.5rem 1.25rem; } }
+    .cert-msg { position: relative; margin-top: 1.25rem; padding: 1.1rem 1.25rem; border-radius: 1rem; font-size: .9rem; line-height: 1.6; animation: fadeIn .3s ease; }
+    .cert-msg.ok { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+    .cert-msg.warn { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+    .cert-msg.err { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+    .cert-msg.load { background: var(--gray-50); border: 1px solid var(--gray-200); color: var(--gray-600); }
+    .cert-msg strong { display: block; font-size: 1rem; margin-bottom: .25rem; }
+    .cert-msg .btn { margin-top: .85rem; }
 </style>
 </head>
 <body>
@@ -767,7 +831,7 @@
                     <span class="home-link-body">
                         <span class="home-link-kicker"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Emprendé</span>
                         <span class="home-link-title" style="display:block;">Emprender CreActiva</span>
-                        <span class="home-link-sub" style="display:block;">Congreso de economía e IA aplicada a emprendimientos</span>
+                        <span class="home-link-sub" style="display:block;">Revivilo: disertantes, emprendedores y certificados</span>
                     </span>
                 </a>
 
@@ -782,25 +846,6 @@
                 </a>
             </div>
 
-            <!-- Banner de inscripción al Congreso Emprender CreActivá -->
-            <a href="https://forms.gle/enEFjTfmcunFc4kDA" target="_blank" rel="noopener noreferrer" class="home-crea-banner reveal">
-                <div class="home-crea-banner-blob cb1"></div>
-                <div class="home-crea-banner-blob cb2"></div>
-                <div class="home-crea-banner-left">
-                    <span class="home-crea-banner-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                    </span>
-                    <div>
-                        <span class="home-crea-banner-badge"><span class="home-crea-banner-dot"></span> Cupos limitados · 24 de octubre</span>
-                        <div class="home-crea-banner-title">Inscribite al Congreso Emprender CreActivá aquí</div>
-                        <div class="home-crea-banner-sub">Participación con costo de $5.000 · Salón Fernández, Predio Ferial de General Alvear</div>
-                    </div>
-                </div>
-                <span class="home-crea-banner-btn">
-                    Quiero inscribirme
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </span>
-            </a>
         </div>
     </div>
 
@@ -1256,106 +1301,137 @@
 
 <section class="page" id="page-creactiva" data-page="creactiva">
 
-    <!-- Hero -->
+    <!-- HERO: agradecimiento -->
     <div class="crea-hero">
         <div class="crea-hero-blob c1"></div>
         <div class="crea-hero-blob c2"></div>
         <div class="crea-hero-blob c3"></div>
+        <div class="crea-sparkles" id="creaSparkles"></div>
         <div class="container-custom">
-            <img src="logos/Logo_CreActiva_Emprender.png" alt="Emprender CreActiva" loading="lazy" class="reveal" style="width:5.5rem; height:5.5rem; object-fit:contain; margin:0 auto .75rem;" onerror="this.style.display='none'" />
-            <span class="badge crea-badge">🚀 11.ª Edición · 24 de octubre de 2026</span>
-            <h1 class="reveal">Emprender <span class="accent">CreActiva</span></h1>
+            <img src="logos/Logo_CreActiva_Emprender.png" alt="Emprender CreActivá" loading="lazy" class="reveal" style="width:5.5rem; height:5.5rem; object-fit:contain; margin:0 auto .75rem;" onerror="this.style.display='none'" />
+            <span class="badge crea-badge">🎉 11.ª Edición · Realizada el 24 de octubre de 2026</span>
+            <h1 class="reveal">¡Gracias por ser <span class="accent">parte!</span></h1>
             <p class="lead reveal">
-                El congreso de la Cámara Joven de General Alvear sobre economía e inteligencia artificial aplicada a los emprendimientos. Un espacio para estudiantes, emprendedores, docentes e instituciones educativas.
+                Te esperamos en la <strong>12.ª edición</strong> de Emprender “CreActivá”. Mientras tanto, te compartimos lo que vivimos: quiénes nos acompañaron en el escenario, los emprendedores que fueron parte y el lugar para descargar tu certificado.
             </p>
-            <div class="crea-hero-pills flex flex-wrap gap-3 justify-center reveal">
-                <span class="crea-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg> 24 de octubre de 2026</span>
-                <span class="crea-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 09:00 hs</span>
-                <span class="crea-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Salón Fernández, Predio Ferial</span>
-            </div>
             <div class="crea-hero-cta reveal">
-                <a href="https://forms.gle/enEFjTfmcunFc4kDA" target="_blank" rel="noopener noreferrer" class="btn btn-crea">
-                    Inscribite ahora
+                <a href="#creactiva/disertantes" class="btn btn-crea">
+                    Conocé a los disertantes
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
-                <a href="#creactiva/que-es" class="btn btn-crea-outline">Conocé el congreso</a>
+                <a href="#creactiva" onclick="creaScroll('creaCertificados'); return false;" class="btn btn-crea-outline">Descargar mi certificado</a>
             </div>
         </div>
     </div>
 
-    <!-- Navegación por cuadrados -->
+    <!-- Accesos -->
     <section class="block" style="padding-top:1.5rem; padding-bottom:0;">
         <div class="container-custom">
+            <div class="text-center reveal" style="margin-bottom:1.5rem;">
+                <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">✨ Te compartimos</span>
+                <h3 style="font-size:1.6rem; font-weight:800; color:var(--gray-900); margin-top:.8rem;">Lo que fue Emprender CreActivá 2026</h3>
+            </div>
             <div class="oferta-hub-grid crea-hub-grid reveal-stagger">
+                <a href="#creactiva/disertantes" class="oferta-hub-card hub-violet reveal-child">
+                    <span class="home-link-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+                    <span class="hub-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+                    <h3>Disertantes que fueron parte</h3>
+                    <p>Conocé el perfil de cada disertante y entrá directo a sus redes y a las de sus empresas.</p>
+                </a>
+                <a href="#creactiva/emprendedores" class="oferta-hub-card hub-orange reveal-child">
+                    <span class="home-link-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+                    <span class="hub-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>
+                    <h3>Emprendedores que fueron parte</h3>
+                    <p>Tocá un emprendimiento para ver su perfil, su Instagram personal y el de su marca.</p>
+                </a>
                 <a href="#creactiva/que-es" class="oferta-hub-card hub-blue reveal-child">
                     <span class="home-link-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
                     <span class="hub-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
-                    <h3>¿Qué es Emprender CreActiva?</h3>
-                    <p>Enterate de qué se trata el congreso, sus ejes temáticos y quién lo organiza.</p>
-                </a>
-                <a href="#creactiva/2026" class="oferta-hub-card hub-orange reveal-child">
-                    <span class="home-link-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
-                    <span class="hub-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></span>
-                    <h3>Emprender CreActivá 2026</h3>
-                    <p>Disertantes, cronograma completo y ubicación del evento.</p>
-                </a>
-                <a href="#creactiva/participan" class="oferta-hub-card hub-violet reveal-child">
-                    <span class="home-link-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
-                    <span class="hub-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                    <h3>Quiénes Participan</h3>
-                    <p>Emprendedores, empresarios, todo público e instituciones educativas.</p>
+                    <h3>¿Qué es Emprender CreActivá?</h3>
+                    <p>Recordá de qué se trata el congreso, sus ejes y quién lo organiza.</p>
                 </a>
             </div>
+        </div>
+    </section>
 
-            <a href="https://forms.gle/enEFjTfmcunFc4kDA" target="_blank" rel="noopener noreferrer" class="oferta-hub-cta reveal">
-                <div>
-                    <span class="badge" style="background:rgba(255,255,255,.18); color:#fff;">📝 Cupos limitados</span>
-                    <h2>Inscripción al Congreso</h2>
-                    <p>Inscribite al congreso directamente por acá. Completá el formulario y reservá tu lugar el 24 de octubre en el Salón Fernández, Predio Ferial de General Alvear.</p>
+    <!-- Descargar Certificaciones -->
+    <section class="block" id="creaCertificados">
+        <div class="container-custom" style="max-width:56rem;">
+            <div class="cert-card reveal">
+                <div class="cert-blob"></div>
+                <div class="cert-head">
+                    <span class="cert-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+                    <div>
+                        <h3>Descargar Certificaciones</h3>
+                        <p>Completá tus datos, elegí el evento y descargá tu certificado en PDF.</p>
+                    </div>
                 </div>
-                <span class="home-link-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Preguntas Frecuentes -->
-    <section class="block" id="creaFaq">
-        <div class="container-custom" style="max-width:52rem;">
-            <div class="text-center reveal">
-                <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">❓ Dudas frecuentes</span>
-                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Preguntas Frecuentes</h3>
-            </div>
-            <div style="margin-top:1.75rem;">
-                <details class="faq-item reveal">
-                    <summary>¿Cuál es el costo de participación? <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-                    <div class="faq-body">La participación en Emprender CreActiva es de $5.000, con cupos limitados sujetos a inscripción previa.</div>
-                </details>
-                <details class="faq-item reveal">
-                    <summary>¿A quién está dirigido el congreso? <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-                    <div class="faq-body">A estudiantes, emprendedores, docentes, instituciones educativas y jóvenes interesados en innovación, economía e inteligencia artificial aplicada a los emprendimientos.</div>
-                </details>
-                <details class="faq-item reveal">
-                    <summary>¿Se entrega certificado de participación? <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-                    <div class="faq-body">Sí, todos los asistentes reciben un certificado de participación al finalizar la jornada.</div>
-                </details>
-                <details class="faq-item reveal">
-                    <summary>¿Hace falta tener conocimientos previos de IA o economía? <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-                    <div class="faq-body">No, el congreso está pensado para todos los niveles: las charlas se explican de forma clara y accesible.</div>
-                </details>
-                <details class="faq-item reveal">
-                    <summary>¿Cómo me inscribo con mi escuela o grupo? <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary>
-                    <div class="faq-body">Escribinos por WhatsApp a la Cámara Joven de General Alvear para coordinar la participación institucional.</div>
-                </details>
+                <form id="certForm" class="cert-form" novalidate>
+                    <label class="cert-field">
+                        <span>Nombre y apellido</span>
+                        <input type="text" id="certNombre" placeholder="Ej: Tiziano Graboricki" autocomplete="name" required />
+                    </label>
+                    <label class="cert-field">
+                        <span>DNI</span>
+                        <input type="text" id="certDni" placeholder="Sin puntos. Ej: 40123456" inputmode="numeric" autocomplete="off" maxlength="10" required />
+                    </label>
+                    <label class="cert-field cert-full">
+                        <span>Evento del que participaste</span>
+                        <select id="certEvento"></select>
+                    </label>
+                    <button type="submit" class="btn btn-crea cert-full" id="certBtn" style="justify-content:center;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        Buscar mi certificado
+                    </button>
+                </form>
+                <div id="certResult" aria-live="polite"></div>
             </div>
         </div>
     </section>
 
-    <!-- Organizan y Acompañan -->
+    <!-- Carrusel: Emprendimientos que fueron parte -->
     <section class="block block-alt partners-section">
         <div class="container-custom">
             <div class="text-center reveal">
+                <span class="badge" style="background:rgba(184,93,36,.12); color:var(--secondary);">🚀 Emprendimientos</span>
+                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Emprendimientos que fueron parte</h3>
+                <p style="color:var(--gray-500); margin-top:.5rem; max-width:38rem; margin-left:auto; margin-right:auto;">Marcas alvearenses que se sumaron a la edición 2026.</p>
+            </div>
+            <div class="home-partners-wrap reveal"><div class="home-partners-track" id="trackEmprendimientos"></div></div>
+            <div class="text-center" style="margin-top:1.5rem;"><a href="#creactiva/emprendedores" class="btn btn-outline">Ver perfiles de los emprendedores →</a></div>
+        </div>
+    </section>
+
+    <!-- Carrusel: Empresas que apoyaron -->
+    <section class="block partners-section">
+        <div class="container-custom">
+            <div class="text-center reveal">
+                <span class="badge" style="background:rgba(14,148,136,.12); color:var(--oferta-teal-dark);">🤝 Gracias</span>
+                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Empresas que apoyaron el Emprender</h3>
+                <p style="color:var(--gray-500); margin-top:.5rem; max-width:38rem; margin-left:auto; margin-right:auto;">Sin su compromiso con la juventud alvearense, este congreso no sería posible.</p>
+            </div>
+            <div class="home-partners-wrap reveal"><div class="home-partners-track" id="trackEmpresas"></div></div>
+        </div>
+    </section>
+
+    <!-- Carrusel: Instituciones que apoyan -->
+    <section class="block block-alt partners-section">
+        <div class="container-custom">
+            <div class="text-center reveal">
+                <span class="badge badge-primary">🏛️ Instituciones</span>
+                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Instituciones que apoyan el CreActivá</h3>
+                <p style="color:var(--gray-500); margin-top:.5rem; max-width:38rem; margin-left:auto; margin-right:auto;">Organismos y entidades que acompañan año tras año.</p>
+            </div>
+            <div class="home-partners-wrap reveal"><div class="home-partners-track" id="trackInstituciones"></div></div>
+        </div>
+    </section>
+
+    <!-- Organizan -->
+    <section class="block partners-section">
+        <div class="container-custom">
+            <div class="text-center reveal">
                 <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900);">Organizan y Acompañan</h3>
-                <p style="color:var(--gray-500); margin-top:.5rem;">Instituciones que hacen posible Emprender CreActiva.</p>
+                <p style="color:var(--gray-500); margin-top:.5rem;">Instituciones que hacen posible Emprender CreActivá.</p>
             </div>
             <div class="crea-orglogos reveal">
                 <span class="org-name">
@@ -1372,241 +1448,89 @@
 
 </section>
 
+<!-- ¿Qué es? -->
 <section class="page" id="page-crea-que-es" data-page="crea-que-es">
     <div class="hero-gradient page-hero compact">
         <div class="container-custom">
             <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">💡 Sobre el congreso</span>
-            <h1 style="font-size:2.3rem; font-weight:800; color:var(--gray-900); margin-top:1rem;">¿Qué es Emprender CreActiva?</h1>
+            <h1 style="font-size:2.3rem; font-weight:800; color:var(--gray-900); margin-top:1rem;">¿Qué es Emprender CreActivá?</h1>
         </div>
     </div>
-    <div class="container-custom" style="padding-top:1.5rem;">
-        <a href="#creactiva" class="back-link">← Volver a Emprender CreActiva</a>
-    </div>
-    <!-- ¿Qué es Emprender CreActiva? -->
-    <section class="block" id="creaQueEs">
+    <section class="block" style="padding-top:1rem;">
         <div class="container-custom" style="max-width:58rem;">
-            <div class="info-card reveal" style="margin-top:0;">
+            <a href="#creactiva" class="back-link">← Volver a Emprender CreActivá</a>
+            <div class="info-card reveal">
                 <p style="color:var(--gray-700); line-height:1.8;">
-                    Emprender CreActiva es el congreso de la <strong>Cámara Joven de General Alvear</strong> pensado para acercar a estudiantes, emprendedores, docentes e instituciones educativas las últimas tendencias en <strong>economía e inteligencia artificial aplicada a los emprendimientos</strong>.
+                    Emprender CreActivá es el congreso de la <strong>Cámara Joven de General Alvear</strong> que acerca a estudiantes, emprendedores, docentes e instituciones educativas las últimas tendencias en <strong>economía e inteligencia artificial aplicada a los emprendimientos</strong>.
                 </p>
                 <p style="color:var(--gray-700); line-height:1.8; margin-top:1rem;">
-                    A lo largo de la jornada, especialistas comparten herramientas concretas de innovación, IA y economía para que los jóvenes de la región puedan potenciar sus proyectos y animarse a emprender.
-                </p>
-                <p style="color:var(--gray-700); line-height:1.8; margin-top:1rem;">
-                    En 2026 se realiza la <strong>11.ª edición</strong> de Emprender CreActiva, consolidándolo como uno de los espacios de innovación y emprendedurismo más importantes de General Alvear.
+                    El <strong>24 de octubre de 2026</strong> se realizó la <strong>11.ª edición</strong> en el Salón Fernández del Predio Ferial de General Alvear. ¡Gracias a todos los que fueron parte! La <strong>12.ª edición</strong> ya se está gestando.
                 </p>
                 <div class="flex flex-wrap gap-3" style="margin-top:1.5rem;">
-                    <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 8-4 8 4"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg> 11.ª Edición Emprender CreActiva</span>
-                    <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Estudiantes, emprendedores y docentes</span>
+                    <span class="stat-pill">🎉 11.ª edición realizada</span>
+                    <span class="stat-pill">🚀 Próxima: 12.ª edición</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Ejes del Congreso -->
-    <section class="block block-alt" id="creaEjes">
+    <section class="block block-alt">
         <div class="container-custom">
             <div class="text-center reveal">
-                <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">🎯 Contenidos</span>
-                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Ejes del Congreso</h3>
-                <p style="color:var(--gray-500); margin-top:.5rem; max-width:36rem; margin-left:auto; margin-right:auto;">Cuatro grandes temas atraviesan las charlas y actividades de esta edición.</p>
+                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900);">Ejes del Congreso</h3>
             </div>
             <div class="crea-grid reveal-stagger">
-                <div class="crea-card reveal-child">
-                    <span class="crea-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
-                    <h4>Economía</h4>
-                    <p>Tendencias económicas y su impacto en las decisiones de los emprendedores locales.</p>
-                </div>
-                <div class="crea-card reveal-child">
-                    <span class="crea-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="16" y2="16"/><line x1="16" x2="16" y1="16" y2="16"/></svg></span>
-                    <h4>Inteligencia Artificial</h4>
-                    <p>Conceptos clave de IA explicados de forma clara, práctica y accesible para todos los públicos.</p>
-                </div>
-                <div class="crea-card reveal-child">
-                    <span class="crea-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="10"/></svg></span>
-                    <h4>IA aplicada a emprendimientos</h4>
-                    <p>Casos reales y herramientas concretas para incorporar IA en un negocio o proyecto propio.</p>
-                </div>
-                <div class="crea-card reveal-child">
-                    <span class="crea-card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>
-                    <h4>Innovación y nuevas oportunidades</h4>
-                    <p>Nuevas tendencias, oportunidades de negocio y una mirada hacia el futuro del emprendedurismo.</p>
-                </div>
+                <div class="crea-card reveal-child"><span class="crea-card-ico">📈</span><h4>Economía</h4><p>Tendencias económicas y su impacto en las decisiones de los emprendedores locales.</p></div>
+                <div class="crea-card reveal-child"><span class="crea-card-ico">🤖</span><h4>Inteligencia Artificial</h4><p>Conceptos clave de IA explicados de forma clara, práctica y accesible.</p></div>
+                <div class="crea-card reveal-child"><span class="crea-card-ico">🛠️</span><h4>IA aplicada a emprendimientos</h4><p>Casos reales y herramientas concretas para incorporar IA en un negocio propio.</p></div>
+                <div class="crea-card reveal-child"><span class="crea-card-ico">💡</span><h4>Innovación</h4><p>Nuevas oportunidades de negocio y una mirada hacia el futuro del emprendedurismo.</p></div>
             </div>
         </div>
     </section>
-
 </section>
 
-<section class="page" id="page-crea-2026" data-page="crea-2026">
-    <div class="hero-gradient page-hero compact">
+<!-- Disertantes -->
+<section class="page" id="page-crea-disertantes" data-page="crea-disertantes">
+    <div class="crea-hero" style="padding:8.5rem 0 3rem;">
+        <div class="crea-hero-blob c1"></div>
+        <div class="crea-hero-blob c2"></div>
         <div class="container-custom">
-            <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">🚀 Edición 2026</span>
-            <h1 style="font-size:2.3rem; font-weight:800; color:var(--gray-900); margin-top:1rem;">Emprender CreActivá 2026</h1>
+            <span class="badge crea-badge">🎤 Emprender CreActivá 2026</span>
+            <h1>Disertantes que fueron <span class="accent">parte</span></h1>
+            <p class="lead">Gracias por compartir su experiencia y conocimiento. Acá podés conocerlos y seguirlos a ellos y a sus empresas.</p>
         </div>
     </div>
-    <div class="container-custom" style="padding-top:1.5rem;">
-        <a href="#creactiva" class="back-link">← Volver a Emprender CreActiva</a>
-    </div>
-    <!-- Disertantes -->
-    <section class="block" id="crea2026">
-        <div class="container-custom">
-            <div class="text-center reveal">
-                <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">🎤 Especialistas</span>
-                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Disertantes</h3>
-                <p style="color:var(--gray-500); margin-top:.5rem; max-width:36rem; margin-left:auto; margin-right:auto;">Muy pronto anunciamos a los especialistas confirmados para esta edición.</p>
-            </div>
-            <div class="crea-grid reveal-stagger" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));">
-                <div class="speaker-card reveal-child">
-                    <span class="speaker-avatar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                    <h4>Por confirmar</h4>
-                    <p class="speaker-role">Economía</p>
-                    <p class="bio">Especialista a anunciar próximamente.</p>
-                </div>
-                <div class="speaker-card reveal-child">
-                    <span class="speaker-avatar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                    <h4>Por confirmar</h4>
-                    <p class="speaker-role">Inteligencia Artificial</p>
-                    <p class="bio">Especialista a anunciar próximamente.</p>
-                </div>
-                <div class="speaker-card reveal-child">
-                    <span class="speaker-avatar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                    <h4>Por confirmar</h4>
-                    <p class="speaker-role">IA aplicada a emprendimientos</p>
-                    <p class="bio">Especialista a anunciar próximamente.</p>
-                </div>
-                <div class="speaker-card reveal-child">
-                    <span class="speaker-avatar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                    <h4>Por confirmar</h4>
-                    <p class="speaker-role">Innovación</p>
-                    <p class="bio">Especialista a anunciar próximamente.</p>
-                </div>
-            </div>
+    <section class="block">
+        <div class="container-custom" style="max-width:62rem;">
+            <a href="#creactiva" class="back-link">← Volver a Emprender CreActivá</a>
+            <div id="speakersList"></div>
         </div>
     </section>
-
-    <!-- Cronograma -->
-    <section class="block block-alt" id="creaCronograma">
-        <div class="container-custom" style="max-width:52rem;">
-            <div class="text-center reveal">
-                <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">🗓️ Agenda</span>
-                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Cronograma</h3>
-                <p style="color:var(--gray-500); margin-top:.5rem;">Horarios sujetos a confirmación final.</p>
-            </div>
-            <div class="info-card reveal" style="margin-top:1.75rem;">
-                <div class="activity-list">
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-                        <div><strong>09:00 hs</strong> — Acreditación y recepción de asistentes</div>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></span>
-                        <div><strong>09:30 hs</strong> — Apertura oficial del congreso</div>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                        <div><strong>10:00 hs</strong> — Charlas y disertaciones sobre economía e IA</div>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></span>
-                        <div><strong>12:30 hs</strong> — IA aplicada a emprendimientos: casos prácticos</div>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
-                        <div><strong>14:00 hs</strong> — Espacio de networking entre emprendedores</div>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
-                        <div><strong>15:30 hs</strong> — Cierre y entrega de certificados</div>
-                    </div>
-                </div>
-                <p class="oferta-note">Cronograma tentativo — puede sufrir modificaciones que se comunicarán antes del evento.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Información del Evento -->
-    <section class="block" id="creaInfo">
-        <div class="container-custom" style="max-width:58rem;">
-            <div class="text-center reveal">
-                <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">📍 Cómo llegar</span>
-                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Información del Evento</h3>
-            </div>
-            <div class="info-card reveal" style="margin-top:1.75rem;">
-                <div class="que-es-layout">
-                    <div class="que-es-text">
-                        <div class="info-row"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></span><div><p class="lbl">Fecha</p><p class="val">24 de octubre de 2026</p></div></div>
-                        <div class="info-row"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div><p class="lbl">Horario</p><p class="val">09:00 hs</p></div></div>
-                        <div class="info-row"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><div><p class="lbl">Lugar</p><p class="val">Salón Fernández – Predio Ferial de General Alvear, Mendoza</p></div></div>
-                        <div class="info-row"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><p class="lbl">Organiza</p><p class="val">Cámara Joven de General Alvear</p></div></div>
-                    </div>
-                    <div class="que-es-media">
-                        <div class="map-frame" style="height:100%;">
-                            <iframe src="https://www.google.com/maps?q=Predio+Ferial+General+Alvear+Mendoza&output=embed" title="Ubicación Emprender CreActiva" style="width:100%; height:100%; border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <p class="oferta-note">Predio Ferial de General Alvear, Mendoza. Recomendamos llegar con anticipación para la acreditación.</p>
-            </div>
-        </div>
-    </section>
-
 </section>
 
-<section class="page" id="page-crea-participan" data-page="crea-participan">
-    <div class="hero-gradient page-hero compact">
+<!-- Emprendedores -->
+<section class="page" id="page-crea-emprendedores" data-page="crea-emprendedores">
+    <div class="crea-hero" style="padding:8.5rem 0 3rem;">
+        <div class="crea-hero-blob c1"></div>
+        <div class="crea-hero-blob c2"></div>
         <div class="container-custom">
-            <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">👥 Público del congreso</span>
-            <h1 style="font-size:2.3rem; font-weight:800; color:var(--gray-900); margin-top:1rem;">Quiénes Participan</h1>
+            <span class="badge crea-badge">🚀 Emprender CreActivá 2026</span>
+            <h1>Emprendedores que fueron <span class="accent">parte</span></h1>
+            <p class="lead">Tocá un emprendimiento para ver su perfil y seguirlos en Instagram.</p>
         </div>
     </div>
-    <div class="container-custom" style="padding-top:1.5rem;">
-        <a href="#creactiva" class="back-link">← Volver a Emprender CreActiva</a>
-    </div>
-    <!-- Quiénes Participan -->
-    <section class="block block-alt" id="creaParticipan">
-        <div class="container-custom" style="max-width:58rem;">
-            <div class="info-card reveal" style="margin-top:0;">
-                <p style="color:var(--gray-700); line-height:1.8;">
-                    De Emprender CreActiva participan <strong>emprendedores y empresarios</strong> interesados en incorporar economía e inteligencia artificial a sus proyectos, así como estudiantes y docentes. <strong>Todo público puede asistir</strong>: no hace falta tener un emprendimiento propio ni conocimientos previos del tema.
-                </p>
-                <div class="flex flex-wrap gap-3" style="margin-top:1.5rem;">
-                    <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Emprendedores y empresarios</span>
-                    <span class="stat-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg> Todo público</span>
-                </div>
-            </div>
-
-            <div class="text-center reveal" style="margin-top:2.5rem;">
-                <span class="badge" style="background:rgba(124,58,237,.12); color:var(--crea-violet-dark);">🏫 Escuelas y docentes</span>
-                <h3 style="font-size:1.85rem; font-weight:800; color:var(--gray-900); margin-top:.85rem;">Instituciones Educativas</h3>
-            </div>
-            <div class="info-card reveal" style="margin-top:1.75rem;">
-                <p style="color:var(--gray-700); line-height:1.8;">
-                    Invitamos a escuelas, docentes y grupos estudiantiles a participar de Emprender CreActiva junto a sus alumnos. Es una gran oportunidad para acercar a los jóvenes al mundo del emprendedurismo, la economía y la inteligencia artificial de forma práctica y motivadora.
-                </p>
-                <div class="activity-list" style="margin-top:1rem;">
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg></span>
-                        <div>Coordinación de grupos y traslados para instituciones que lo soliciten</div>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
-                        <div>Material de acompañamiento para trabajar el contenido en el aula</div>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-ico crea-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
-                        <div>Certificado de participación institucional</div>
-                    </div>
-                </div>
-                <div style="margin-top:1.5rem;">
-                    <a href="https://wa.me/542625671342" target="_blank" rel="noopener noreferrer">
-                        <button class="btn btn-crea">Coordinar participación institucional</button>
-                    </a>
-                </div>
-            </div>
+    <section class="block">
+        <div class="container-custom">
+            <a href="#creactiva" class="back-link">← Volver a Emprender CreActivá</a>
+            <div class="crea-grid reveal-stagger" id="entrepreneursGrid"></div>
         </div>
     </section>
+</section>
 
+<section class="page" id="page-crea-emprendedor-detalle" data-page="crea-emprendedor-detalle">
+    <div class="container-custom" style="padding-top:8.5rem; padding-bottom:5rem; max-width:62rem;">
+        <a href="#creactiva/emprendedores" class="back-link">← Volver a emprendedores</a>
+        <div id="entrepreneurDetail"></div>
+    </div>
 </section>
 
 <section class="page" id="page-contacto" data-page="contacto">
@@ -2602,10 +2526,15 @@ function router() {
         renderInstitutionDetail(sub);
     } else if (base === "creactiva" && sub === "que-es") {
         pageId = "crea-que-es";
-    } else if (base === "creactiva" && sub === "2026") {
-        pageId = "crea-2026";
-    } else if (base === "creactiva" && sub === "participan") {
-        pageId = "crea-participan";
+    } else if (base === "creactiva" && sub === "disertantes") {
+        pageId = "crea-disertantes";
+    } else if (base === "creactiva" && sub === "emprendedores" && sub2) {
+        pageId = "crea-emprendedor-detalle";
+        renderEntrepreneurDetail(sub2);
+    } else if (base === "creactiva" && sub === "emprendedores") {
+        pageId = "crea-emprendedores";
+    } else if (base === "creactiva") {
+        pageId = "creactiva";
     } else if (!VALID_PAGES.includes(base)) {
         pageId = "inicio";
     }
@@ -2715,12 +2644,284 @@ function initTipsCarousel() {
         toggle.addEventListener("click", () => menu.classList.toggle("open"));
     }
 })();
+/* ============================================================
+   EMPRENDER CREACTIVÁ — datos (EDITÁ ESTOS ARRAYS)
+   ------------------------------------------------------------
+   Fotos y logos: copialos en "logos/creactiva/..." y poné la ruta.
+   Si la imagen no existe, se muestran las iniciales / el nombre.
+   Redes: poné solo el usuario de Instagram (sin @) o la URL completa.
+   Los campos vacíos ("") no muestran botón.
+   ============================================================ */
+
+/* DISERTANTES que fueron parte */
+const SPEAKERS = [
+    { id: "disertante-1", name: "Nombre del disertante 1", role: "Cargo / especialidad", company: "Empresa o marca", topic: "Tema de la charla",
+      bio: "Breve biografía del disertante. Reemplazá este texto.",
+      photo: "logos/creactiva/disertantes/disertante-1.jpg",
+      igPersonal: "", igEmpresa: "", linkedin: "", web: "" },
+    { id: "disertante-2", name: "Nombre del disertante 2", role: "Cargo / especialidad", company: "Empresa o marca", topic: "Tema de la charla",
+      bio: "Breve biografía del disertante. Reemplazá este texto.",
+      photo: "logos/creactiva/disertantes/disertante-2.jpg",
+      igPersonal: "", igEmpresa: "", linkedin: "", web: "" },
+    { id: "disertante-3", name: "Nombre del disertante 3", role: "Cargo / especialidad", company: "Empresa o marca", topic: "Tema de la charla",
+      bio: "Breve biografía del disertante. Reemplazá este texto.",
+      photo: "logos/creactiva/disertantes/disertante-3.jpg",
+      igPersonal: "", igEmpresa: "", linkedin: "", web: "" },
+    { id: "disertante-4", name: "Nombre del disertante 4", role: "Cargo / especialidad", company: "Empresa o marca", topic: "Tema de la charla",
+      bio: "Breve biografía del disertante. Reemplazá este texto.",
+      photo: "logos/creactiva/disertantes/disertante-4.jpg",
+      igPersonal: "", igEmpresa: "", linkedin: "", web: "" }
+];
+
+/* EMPRENDEDORES que fueron parte (su logo alimenta también el carrusel) */
+const ENTREPRENEURS = [
+    { id: "emprendimiento-1", brand: "Emprendimiento 1", owner: "Nombre del emprendedor/a", category: "Rubro",
+      bio: "Contá en pocas líneas de qué se trata el emprendimiento.",
+      logo: "logos/creactiva/emprendimientos/emprendimiento-1.png",
+      igPersonal: "", igEmpresa: "", web: "", whatsapp: "" },
+    { id: "emprendimiento-2", brand: "Emprendimiento 2", owner: "Nombre del emprendedor/a", category: "Rubro",
+      bio: "Contá en pocas líneas de qué se trata el emprendimiento.",
+      logo: "logos/creactiva/emprendimientos/emprendimiento-2.png",
+      igPersonal: "", igEmpresa: "", web: "", whatsapp: "" },
+    { id: "emprendimiento-3", brand: "Emprendimiento 3", owner: "Nombre del emprendedor/a", category: "Rubro",
+      bio: "Contá en pocas líneas de qué se trata el emprendimiento.",
+      logo: "logos/creactiva/emprendimientos/emprendimiento-3.png",
+      igPersonal: "", igEmpresa: "", web: "", whatsapp: "" },
+    { id: "emprendimiento-4", brand: "Emprendimiento 4", owner: "Nombre del emprendedor/a", category: "Rubro",
+      bio: "Contá en pocas líneas de qué se trata el emprendimiento.",
+      logo: "logos/creactiva/emprendimientos/emprendimiento-4.png",
+      igPersonal: "", igEmpresa: "", web: "", whatsapp: "" },
+    { id: "emprendimiento-5", brand: "Emprendimiento 5", owner: "Nombre del emprendedor/a", category: "Rubro",
+      bio: "Contá en pocas líneas de qué se trata el emprendimiento.",
+      logo: "logos/creactiva/emprendimientos/emprendimiento-5.png",
+      igPersonal: "", igEmpresa: "", web: "", whatsapp: "" },
+    { id: "emprendimiento-6", brand: "Emprendimiento 6", owner: "Nombre del emprendedor/a", category: "Rubro",
+      bio: "Contá en pocas líneas de qué se trata el emprendimiento.",
+      logo: "logos/creactiva/emprendimientos/emprendimiento-6.png",
+      igPersonal: "", igEmpresa: "", web: "", whatsapp: "" }
+];
+
+/* EMPRESAS que apoyaron el Emprender */
+const CREA_EMPRESAS = [
+    { name: "Empresa 1", l: "logos/creactiva/empresas/empresa-1.png" },
+    { name: "Empresa 2", l: "logos/creactiva/empresas/empresa-2.png" },
+    { name: "Empresa 3", l: "logos/creactiva/empresas/empresa-3.png" },
+    { name: "Empresa 4", l: "logos/creactiva/empresas/empresa-4.png" },
+    { name: "Empresa 5", l: "logos/creactiva/empresas/empresa-5.png" },
+    { name: "Empresa 6", l: "logos/creactiva/empresas/empresa-6.png" }
+];
+
+/* INSTITUCIONES que apoyan el CreActivá */
+const CREA_INSTITUCIONES = [
+    { name: "Institución 1", l: "logos/creactiva/instituciones/institucion-1.png" },
+    { name: "Institución 2", l: "logos/creactiva/instituciones/institucion-2.png" },
+    { name: "Institución 3", l: "logos/creactiva/instituciones/institucion-3.png" },
+    { name: "Institución 4", l: "logos/creactiva/instituciones/institucion-4.png" },
+    { name: "Institución 5", l: "logos/creactiva/instituciones/institucion-5.png" },
+    { name: "Institución 6", l: "logos/creactiva/instituciones/institucion-6.png" }
+];
+
+/* CERTIFICADOS
+   El sistema busca: <folder>/<prefix>-<nombreapellido>.pdf
+   Ej.: Tiziano Graboricki -> pdf/emprender/emprender-tizianograboricki.pdf
+   (todo minúscula, sin espacios, sin tildes; ñ -> n).
+   También prueba el orden inverso (apellido+nombre) y la variante con DNI:
+   emprender-tizianograboricki-40123456.pdf
+   Para sumar otro evento, agregá una línea más. */
+const CERT_EVENTS = [
+    { id: "emprender-2026", label: "Certificado Emprender CreActivá 2026", folder: "pdf/emprender", prefix: "emprender" }
+    // , { id: "oferta-2026", label: "Certificado Oferta Educativa 2026", folder: "pdf/oferta-educativa", prefix: "oferta" }
+];
+
+/* ---------- Helpers ---------- */
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+function igUrl(h) {
+    if (!h) return "";
+    if (/^https?:\/\//i.test(h)) return h;
+    return "https://www.instagram.com/" + h.replace(/^@/, "").replace(/\/+$/, "") + "/";
+}
+function webUrl(u) { return !u ? "" : (/^https?:\/\//i.test(u) ? u : "https://" + u); }
+function waUrl(n) { return !n ? "" : (/^https?:\/\//i.test(n) ? n : "https://wa.me/" + n.replace(/\D/g, "")); }
+const IC_IG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>`;
+const IC_IN = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>`;
+const IC_WA = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>`;
+function chip(url, label, icon, cls) {
+    return url ? `<a class="social-chip ${cls || ""}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${icon}${esc(label)}</a>` : "";
+}
+function avatar(src, name, isLogo) {
+    const ini = initials(name) || "?";
+    const img = src ? `<img src="${esc(src)}" alt="${esc(name)}" loading="lazy" onerror="this.style.display='none'" />` : "";
+    return `<div class="avatar${isLogo ? " logo" : ""}">${esc(ini)}${img}</div>`;
+}
+
+/* ---------- Carruseles de logos ---------- */
+function renderLogoTrack(id, list) {
+    const track = document.getElementById(id);
+    if (!track) return;
+    const html = list.map(p => `
+        <div class="partner-l-item" title="${esc(p.name)}">
+            <img src="${esc(p.l)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <span class="partner-l-fallback" style="display:none;">${esc(p.name)}</span>
+        </div>`).join("");
+    track.innerHTML = html + html;
+}
+function renderCreaCarousels() {
+    renderLogoTrack("trackEmprendimientos", ENTREPRENEURS.map(e => ({ name: e.brand, l: e.logo })));
+    renderLogoTrack("trackEmpresas", CREA_EMPRESAS);
+    renderLogoTrack("trackInstituciones", CREA_INSTITUCIONES);
+}
+
+/* ---------- Disertantes ---------- */
+function renderSpeakers() {
+    const box = document.getElementById("speakersList");
+    if (!box) return;
+    box.innerHTML = SPEAKERS.map(s => {
+        const personal = chip(igUrl(s.igPersonal), "Instagram personal", IC_IG, "ig") + chip(s.linkedin, "LinkedIn", IC_IN);
+        const empresa = chip(igUrl(s.igEmpresa), "Instagram de la empresa", IC_IG, "ig") + chip(webUrl(s.web), "Sitio web", iconGlobe());
+        return `
+        <article class="profile-card" id="${esc(s.id)}">
+            ${avatar(s.photo, s.name)}
+            <div class="profile-body">
+                <h2 class="profile-name">${esc(s.name)}</h2>
+                <p class="profile-role">${esc(s.role)}${s.company ? " · " + esc(s.company) : ""}</p>
+                ${s.topic ? `<span class="profile-topic">🎤 ${esc(s.topic)}</span>` : ""}
+                <p class="profile-bio">${esc(s.bio)}</p>
+                ${personal ? `<p class="links-label">Redes personales</p><div class="profile-links">${personal}</div>` : ""}
+                ${empresa ? `<p class="links-label">${esc(s.company || "Empresa")}</p><div class="profile-links">${empresa}</div>` : ""}
+                ${!personal && !empresa ? `<p class="no-links">Redes próximamente.</p>` : ""}
+            </div>
+        </article>`;
+    }).join("");
+}
+
+/* ---------- Emprendedores ---------- */
+function renderEntrepreneurs() {
+    const grid = document.getElementById("entrepreneursGrid");
+    if (!grid) return;
+    grid.innerHTML = ENTREPRENEURS.map(e => `
+        <a href="#creactiva/emprendedores/${esc(e.id)}" class="ent-card reveal-child">
+            ${avatar(e.logo, e.brand, true)}
+            <h4>${esc(e.brand)}</h4>
+            <p class="owner">${esc(e.owner)}</p>
+            ${e.category ? `<span class="tag-pill">${esc(e.category)}</span>` : ""}
+            <span class="see">Ver perfil →</span>
+        </a>`).join("");
+}
+function renderEntrepreneurDetail(id) {
+    const box = document.getElementById("entrepreneurDetail");
+    const e = ENTREPRENEURS.find(x => x.id === id);
+    if (!e) {
+        box.innerHTML = `<div class="empty-state"><p style="font-weight:600;">No encontramos este emprendimiento</p></div>`;
+        return;
+    }
+    const personal = chip(igUrl(e.igPersonal), `Instagram de ${e.owner}`, IC_IG, "ig") + chip(waUrl(e.whatsapp), "WhatsApp", IC_WA);
+    const marca = chip(igUrl(e.igEmpresa), `Instagram de ${e.brand}`, IC_IG, "ig") + chip(webUrl(e.web), "Sitio web", iconGlobe());
+    box.innerHTML = `
+        <div class="ent-hero">
+            ${avatar(e.logo, e.brand, true)}
+            <div>
+                ${e.category ? `<span class="badge" style="background:rgba(255,255,255,.18); color:#fff;">${esc(e.category)}</span>` : ""}
+                <h1 style="margin-top:.5rem;">${esc(e.brand)}</h1>
+                <p>Por ${esc(e.owner)}</p>
+            </div>
+        </div>
+        <div class="grid grid-2 gap-6" style="margin-top:1.5rem; align-items:start;">
+            <div class="info-card"><h3>Sobre el emprendimiento</h3><p style="color:var(--gray-600); line-height:1.75;">${esc(e.bio)}</p></div>
+            <div class="info-card">
+                <h3>Seguilos</h3>
+                ${personal ? `<p class="links-label" style="margin-top:0;">Redes personales</p><div class="profile-links">${personal}</div>` : ""}
+                ${marca ? `<p class="links-label">${esc(e.brand)}</p><div class="profile-links">${marca}</div>` : ""}
+                ${!personal && !marca ? `<p class="no-links">Redes próximamente.</p>` : ""}
+            </div>
+        </div>`;
+}
+
+/* ---------- Certificados ---------- */
+function slugName(s) { return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, ""); }
+async function pdfExists(url) {
+    try {
+        const r = await fetch(url, { method: "HEAD", cache: "no-store" });
+        const ct = (r.headers.get("content-type") || "").toLowerCase();
+        return r.ok && !ct.includes("text/html");
+    } catch (_) { return false; }
+}
+function certMsg(type, html) {
+    const out = document.getElementById("certResult");
+    if (out) out.innerHTML = html ? `<div class="cert-msg ${type}">${html}</div>` : "";
+}
+async function buscarCertificado(ev) {
+    ev.preventDefault();
+    const btn = document.getElementById("certBtn");
+    const nombre = document.getElementById("certNombre").value.trim();
+    const dni = document.getElementById("certDni").value.replace(/\D/g, "");
+    const evento = CERT_EVENTS.find(x => x.id === document.getElementById("certEvento").value);
+    const words = nombre.split(/\s+/).filter(Boolean);
+
+    if (words.length < 2) return certMsg("warn", "<strong>Faltan datos</strong>Ingresá tu nombre y apellido completos.");
+    if (dni.length < 7 || dni.length > 8) return certMsg("warn", "<strong>DNI inválido</strong>Ingresá tu DNI sin puntos (7 u 8 números).");
+    if (!evento) return certMsg("warn", "<strong>Elegí un evento</strong>");
+    if (location.protocol === "file:") return certMsg("warn", "<strong>Solo disponible online</strong>La búsqueda funciona cuando la página está publicada en el servidor, no abierta como archivo local.");
+
+    btn.disabled = true;
+    certMsg("load", "Buscando tu certificado…");
+
+    const slugs = [...new Set([words.map(slugName).join(""), [...words].reverse().map(slugName).join("")])];
+    const candidates = [
+        ...slugs.map(s => `${evento.folder}/${evento.prefix}-${s}-${dni}.pdf`),
+        ...slugs.map(s => `${evento.folder}/${evento.prefix}-${s}.pdf`)
+    ];
+    let found = null;
+    for (const url of candidates) {
+        if (await pdfExists(url)) { found = url; break; }
+    }
+    btn.disabled = false;
+
+    if (found) {
+        const file = found.split("/").pop();
+        certMsg("ok", `<strong>¡Encontramos tu certificado! 🎉</strong>${esc(evento.label)}<br>
+            <a class="btn btn-crea" href="${esc(found)}" download="${esc(file)}" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Descargar certificado (PDF)</a>`);
+    } else {
+        certMsg("err", `<strong>No encontramos un certificado con esos datos</strong>Revisá que tu nombre y apellido estén bien escritos. Si el problema sigue, escribinos por
+            <a href="https://wa.me/542625529163" target="_blank" rel="noopener noreferrer" class="text-primary-dark" style="font-weight:700;">WhatsApp</a> y lo resolvemos.`);
+    }
+}
+function initCertificates() {
+    const sel = document.getElementById("certEvento");
+    const form = document.getElementById("certForm");
+    if (!sel || !form || form.dataset.ready) return;
+    form.dataset.ready = "1";
+    sel.innerHTML = CERT_EVENTS.map(e => `<option value="${esc(e.id)}">${esc(e.label)}</option>`).join("");
+    form.addEventListener("submit", buscarCertificado);
+}
+
+/* ---------- Destellos del hero ---------- */
+function initSparkles() {
+    const w = document.getElementById("creaSparkles");
+    if (!w || w.dataset.ready) return;
+    w.dataset.ready = "1";
+    for (let i = 0; i < 22; i++) {
+        const s = document.createElement("span");
+        s.style.left = Math.random() * 100 + "%";
+        s.style.top = Math.random() * 100 + "%";
+        s.style.animationDelay = (Math.random() * 4).toFixed(2) + "s";
+        s.style.animationDuration = (3 + Math.random() * 3).toFixed(2) + "s";
+        w.appendChild(s);
+    }
+}
+
 /* INICIALIZACIÓN */
 renderNews();
 updateOfertaStats();
 filterInstitutions("");
 renderPartners();
 initTipsCarousel();
+renderCreaCarousels();
+renderSpeakers();
+renderEntrepreneurs();
+initCertificates();
+initSparkles();
 window.addEventListener("hashchange", router);
 window.addEventListener("DOMContentLoaded", router);
 router();
